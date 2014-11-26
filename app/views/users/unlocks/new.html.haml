@@ -1,0 +1,14 @@
+- content_for(:page_title) { 'Unlock Account'}
+
+#main.colgroup.colgroup1
+  #passreset
+    = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :class => "landingForm", :html => { :method => :post }) do |f|
+      %h1 Unlock Account
+      %ul
+        %li
+          %span.formerror
+          %label.placeholder{for: :email} Email Address
+          %input#password.text{name: :email, type: :text}
+
+      %small You will be emailed instructions to unlock your account.
+      %input.button.submit{type: :submit, value: 'Submit'}

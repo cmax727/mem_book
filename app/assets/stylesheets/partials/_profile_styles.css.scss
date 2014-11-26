@@ -1,0 +1,134 @@
+.profile > img:first-child,
+.profile div.thumb
+{
+  padding: 4px;
+  border: solid 1px #d8d8d8;
+}
+
+.profile hgroup > h2
+{
+  font-size: 16px;
+}
+
+.profile > img + h2, .profile > .thumb + h2
+{
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.profile footer menu
+{
+  float: left;
+}
+
+.profile footer menu + menu
+{
+  float: right;
+}
+
+.profile footer menu > li > a
+{
+  padding: 2px 0 2px 18px;
+}
+
+.profile footer menu > li.flag > a
+{
+  background-position: 1px 50%;
+}
+
+.profileA > div, .profileA > section
+{
+  clear: both;
+  float: left;
+  width: 99.4%;
+  min-height: 1px;
+  padding: 36px 0 16px;
+  border-top: solid 1px #d3d3d3;
+}
+
+.profileA > *:first-child
+{
+  padding-top: 0;
+  border-top: none;
+}
+
+.profileA > header
+{
+  min-height: 105px;
+  padding-bottom: 0;
+  font-size: 15px;
+  line-height: normal;
+}
+
+.profileA > header .cal
+{
+  margin-right: 22px;
+}
+
+.profileA > header h1
+{
+  margin: 0;
+  font-size: 25px;
+}
+
+.profileA > header h1 + *
+{
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.profileA > header time
+{
+  display: block;
+}
+
+.profileA > * > h3
+{
+  float: left;
+  width: 17%;
+  color: $primary;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.profileA > * > h3 + *
+{
+  margin-left: 17%;
+}
+
+.profileA > * > section
+{
+  clear: both;
+  width: 100%;
+}
+
+.profileA > * > section header
+{
+  float: left;
+  width: 17%;
+}
+
+.profileA > * > section header h3
+{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.profileA > * > section header a
+{
+  position: relative;
+  float: left;
+  margin-top: -5px;
+}
+
+.profileA > * > section header + *
+{
+  float: right;
+  width: 83%;
+}
+
+#manage_photos
+{
+  text-decoration: none;
+}

@@ -1,0 +1,82 @@
+div.textContainer{
+ margin-top: 25px;
+ margin: 0px auto;
+ width: 650px;
+}
+
+div.textContainer h3{
+  font-size: 24px !important;
+  margin-top: 18px;
+  margin-bottom: 14px !important;
+}
+
+div.textContainer h1{
+  color: $primary;
+  font-size: 30px;
+  font-family: $headingFont;
+
+}
+
+div.textContainer p{
+
+  margin-bottom: 35px;
+}
+
+div.textContainer img{
+  padding: 2px;
+  background-color: #dfdfdf;
+  border: 1px solid #cdcdcd;
+  margin: 12px;
+  margin-top: 0px;
+  width: 100px;
+}
+
+div.textContainer img.left{
+  float: left;
+  margin-left: 0px;
+}
+
+div.textContainer img.right{
+  float: right;
+  margin-right: 0px;
+}
+
+div.textContainer ol.inTextList{
+    list-style-type: decimal !important;
+    padding-left: 35px;
+
+}
+
+div.textContainer ol.inTextList li{
+  margin-bottom: 5px;
+}
+
+div.textContainer ul{
+  list-style-type: square !important;
+  padding-left: 35px;
+}
+
+div.textContainer ul li{
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+div.textContainer h2{
+  font-size: 16px;
+
+}
+
+#main.noPadding{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+div.textContainer hr{
+  margin: 17px 0px 17px 0px;
+}
+
+div.textContainer h3 em{
+  font-size: 16px;
+  color: black;
+  font-style: normal;
+}

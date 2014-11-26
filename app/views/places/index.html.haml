@@ -1,0 +1,63 @@
+- content_for(:navigation_item) { 'Places' }
+
+- content_for :stylesheets do
+  = stylesheet_link_tag 'jquery_ui/jqvmap.css'
+
+- content_for :javascripts do
+
+  = javascript_include_tag 'libs/jquery.vmap.js'
+  = javascript_include_tag 'libs/jquery.vmap.world.js'
+  = javascript_include_tag 'places.js'
+#main.inwards.colgroup.colgroup2
+
+  %hgroup
+    %h1 Places
+    %h2 People, groups and events near you.
+
+    #edit_place_button
+      = select_tag "country", options_from_collection_for_select(@countries, "country_pk", "name")
+
+    %hr.clear
+
+    %h3#current_location
+      %span.underline= link_to @city.name, country_region_city_path(@country, @region, @city)
+      %span.underline= link_to @region.name, country_region_path(@country, @region)
+      %span.underline= link_to @country.name, country_path(@country) 
+
+  .col
+    .box#place_near
+      %h2 
+        Places near
+        = @city.name
+
+      .colgroup
+
+        .places_column
+          %ul.places_tags
+            = render :partial => "near_regions", :locals => {:near_regions => @near_regions, :country => @country}
+ 
+  %aside
+
+
+    %ul.listA
+      %li
+        = image_tag 'thumb_placeholder2.jpg', width: 102, height: 103, alt: 'Thumbnail'
+        .desc
+          %h5 Advert Goes Here
+          %p Seshank - Here is where you can upload your own images and text to display to the users...
+            
+  .box
+    #map_area
+      #vmap{:style => "width: 1000px; height: 800px;"}
+
+
+
+
+
+
+  %hr.clear
+
+
+
+
+ 

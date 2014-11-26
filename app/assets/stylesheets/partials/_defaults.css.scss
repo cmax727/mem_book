@@ -1,0 +1,143 @@
+p
+{
+  margin-bottom: 1em;
+}
+
+img
+{
+  vertical-align: middle;
+}
+
+img.port
+{
+  float: left;
+  margin: 3px 15px 15px 0;
+}
+
+img.star
+{
+  float: right;
+  margin: 3px 0 15px 15px;
+}
+
+iframe
+{
+  display: block;
+  vertical-align: bottom;
+}
+
+address
+{
+  display: block;
+}
+
+body
+{
+  background: #fff;
+  color: #1f1f1f;
+  font: 0.814em/1.3em $bodyFont;
+}
+
+.label
+{
+  color: $primary;
+  font-weight: bold;
+}
+
+blockquote
+{
+  padding: .25em 0 0 30px;
+}
+
+blockquote p
+{
+  margin-bottom: .5em;
+}
+
+blockquote cite
+{
+  display: block;
+  text-align: right;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6
+{
+  margin-bottom: .5em;
+  font-weight: normal;
+  line-height: normal;
+}
+
+h5, h6
+{
+  font-weight: bold;
+}
+
+
+h1
+{
+  font-size: 20px;
+}
+
+h2
+{
+  font-size: 18px;
+}
+
+h3
+{
+  font-size: 130%;
+}
+
+h4
+{
+  font-size: 120%;
+}
+
+h5
+{
+  font-size: 110%;
+}
+
+h6
+{
+  font-size: 100%;
+}
+
+h1 a,
+h1 a:link,
+h1 a:visited,
+h2 a,
+h2 a:link,
+h2 a:visited,
+h3 a, h3 a:link,
+h3 a:visited,
+h4 a,
+h4 a:link,
+h4 a:visited,
+h5 a,
+h5 a:link,
+h5 a:visited
+{
+  text-decoration: none;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover
+{
+  text-decoration: underline;
+}
+
+hgroup
+{
+  margin-bottom: 20px;
+}
+
+hgroup > *
+{
+  margin: 0;
+}
+
+hgroup > *:first-child
+{
+  margin-bottom: .25em;
+}

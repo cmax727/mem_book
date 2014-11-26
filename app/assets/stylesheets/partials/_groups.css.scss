@@ -1,0 +1,37 @@
+.groupA > section > h5
+{
+  color: $primary;
+}
+
+.groupA > section > h5 > a
+{
+  color: $primary;
+}
+
+.groupA > section > h5 small
+{
+  color: #000;
+  font-weight: normal;
+}
+
+.groupA > section > ul {
+  float: left;
+}
+
+.groupA > section > ul > li
+{
+  display: inline;
+  float: left;
+  margin-left: 5px;
+}
+
+.groupA > section > ul > li:first-child
+{
+  margin-left: 0;
+}
+
+.groupA > section > ul + .more
+{
+  float: left;
+  margin: 8px 0 0 7px;
+}

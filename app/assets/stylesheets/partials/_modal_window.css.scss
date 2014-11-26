@@ -1,0 +1,38 @@
+#modal_window{
+  width: 650px;
+  max-height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  border-radius: 6px;
+  margin-left: -325px;
+  background-color: white;
+  z-index: 100;
+  border: 2px solid #cdcdcd;
+  box-shadow: 0px 0px 300px 300px rgba(100,100,100, .2);
+  display: none;
+}
+
+#modal_window.flag{
+  width: 400px;
+}
+
+#modal_window #close{
+  font-weight: bold;
+  position: absolute;
+  left: 625px;
+  top: 7.5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#modal_window.flag #close{
+  left: 375px;
+}
+
+#modal_window h1{
+  font-size: 16px;
+  margin-top: 15px;
+  margin-left: 15px;
+  font-weight: bold;
+}

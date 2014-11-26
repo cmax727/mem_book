@@ -1,0 +1,99 @@
+
+
+aside.sideAlign{
+  float: right;
+}
+
+
+#wrapper > .inwards > #main > aside {
+  float: right;
+  width: 185px;
+}
+
+
+
+
+
+div.social-wrap {
+    button {
+    padding-left: 35px;
+    padding-right: 0px;
+    height: 35px;
+    background: none;
+    border: none;
+    display: block;
+    background-size: 25px 25px, cover;
+    background-position: 10px center, center center;
+    background-repeat: no-repeat, repeat;
+    border-radius: 4px;
+    color: white;
+    font-family: $sansFont, sans-serif;
+    font-size: 15px;
+    margin-bottom: 23px;
+    cursor: pointer;
+    width: 205px;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 2px -2px gray;
+    text-shadow: rgba(0, 0, 0, .3) 0px -1px 0;
+    }
+    .googleplus {
+      $image: 'gplus.png';
+      $color1: #353233;
+      $color2: #1d1b1c;
+      background-size: 30px 30px, cover;
+       background-image: image-url($image), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
+    background-image: image-url($image), -webkit-linear-gradient(top, $color1, $color2);
+    background-image: image-url($image), -moz-linear-gradient(top, $color1, $color2);
+    background-image: image-url($image), -ms-linear-gradient(top, $color1, $color2);
+    background-image: image-url($image), -o-linear-gradient(top, $color1, $color2);
+
+    }
+    .facebook {
+    margin-top: 24px;
+    $image: 'facebookf.png';
+    $color1: #4c74c4;
+    $color2: #3b5998;
+    background-image: image-url($image), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
+    background-image: image-url($image), -webkit-linear-gradient(top, $color1, $color2);
+    background-image: image-url($image), -moz-linear-gradient(top, $color1, $color2);
+    background-image: image-url($image), -ms-linear-gradient(top, $color1, $color2);
+    background-image: image-url($image), -o-linear-gradient(top, $color1, $color2);
+    background-size: 25px 25px, cover;
+    background-position: 10px center, center center;
+    background-repeat: no-repeat, repeat;
+    }
+    .twitter {
+      $color1: #00aced;
+      $color2: #00a9ff;
+      $image: 'twitterbird.png';
+      background-image: image-url($image), -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color1), color-stop(100%, $color2));
+      background-image: image-url($image), -webkit-linear-gradient(top, $color1, $color2);
+      background-image: image-url($image), -moz-linear-gradient(top, $color1, $color2);
+      background-image: image-url($image), -ms-linear-gradient(top, $color1, $color2);
+      background-image: image-url($image), -o-linear-gradient(top, $color1, $color2);
+    }
+}
+div.social-wrap {
+}
+div.social-wrap >
+
+div.social-wrap >
+div.social-wrap >
+div.social-wrap button em {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family:"Times New Roman";
+    margin-right: 4px;
+    margin-left: 4px;
+}
+div.social-wrap button:active {
+    background-color: #222;
+}
+
+
+
+h3.pushBottom{
+  margin-bottom: -2px !important;
+}

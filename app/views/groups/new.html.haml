@@ -1,0 +1,31 @@
+- content_for(:navigation_item) { 'Groups' }
+#main.inwards.colgroup.colgroup1
+  #form_wrap
+    %h1 Create Group
+    = form_for @group, :html => { :class => "form_default", :multipart => true } do |f|
+
+    
+      -# %aside.photo
+        -# = image_tag 'thumb_180x180_amanda-stickleback.jpg', id: 'group_photo'
+        
+        -# = link_to 'Change photo', '#', id: 'change_group_photo'
+        
+        -# = f.file_field :avatar
+
+
+      %label{:for => "name"} Group Name:
+      = f.text_field :name
+      %label{:for => "description"} Group About:
+      = f.text_area :description
+      %aside.interest
+        %label{:for => "ettiquette"} Group Ettiquette:
+        = f.text_field :ettiquette
+        -# %label{for: :interests} Tags
+        -# = f.text_field :tag, :id => '#add_interests.input_autocomplete', :value => 'Type an interest and press enter ...'
+
+        -# #interest_target
+          -# <span class="an_interest">Yoga <em class="remove_interest">x</em></span>
+          -# <span class="an_interest">Healthy Living <em class="remove_interest">x</em></span>
+
+
+      = f.submit "Create Group", :class => 'default_button'

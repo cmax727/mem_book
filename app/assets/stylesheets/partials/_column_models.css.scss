@@ -1,0 +1,204 @@
+.colgroup
+{
+  clear: both;
+  min-height: 1px;
+}
+
+.colgroup > .colset
+{
+  clear: both;
+}
+
+.colgroup .col,
+ul.colgroup > li,
+ul.colgroup > .colset > ul > li,
+.colgroup > aside,
+.colgroup > .colset > aside
+{
+  display: inline;
+  float: left;
+  width: 47%;
+}
+
+.colgroup .col + .col,
+ul.colgroup > li + li,
+ul.colgroup > .colset > ul > li + li {
+  float: right;
+}
+
+.colgroup .colA,
+ul.colgroup > li.colA,
+ul.colgroup > .colset > ul > li.colA,
+.colgroup .colB, ul.colgroup > li.colB,
+ul.colgroup > .colset > ul > li.colB
+{
+  width: 49.9%;
+}
+
+.colgroup .col.star
+{
+  float: right;
+}
+
+.colgroup.pillars > .col,
+ul.colgroup.pillars > li,
+ul.colgroup.pillars > .colset > ul > li,
+.colgroup.pillars > aside
+{
+  width: 33.3%;
+}
+
+ul.colgroup > li.colset
+{
+  display: block;
+  float: none;
+  width: auto;
+}
+
+/* Custom column groups */
+.colgroup > aside > *,
+.colgroup > .colset > aside > *,
+.colgroup > aside > ul > li
+{
+  min-height: 1px;
+  margin-bottom: 14px;
+}
+
+.colgroup1 > aside:first-child
+{
+  width: 191px;
+  margin-right: 29px;
+}
+
+.colgroup1 > div.col
+{
+  width: 496px;
+}
+
+.colgroup1 > div.col textarea
+{
+  width: 480px;
+}
+
+.colgroup1 > div.col form.update-status textarea
+{
+  width: 680px;
+}
+
+.colgroup1 > div.col + aside
+{
+  float: right;
+  width: 218px;
+}
+
+.colgroup1 > div.col:first-child
+{
+  width: 716px;
+}
+
+.colgroup1 > div.col:first-child > .colgroup > .colset > .col:first-child,
+.colgroup1 > div.col:first-child > .colgroup > .colset > aside
+{
+  width: 191px;
+}
+
+.colgroup1 > div.col:first-child > .colgroup > .colset > .col:first-child + .col,
+.colgroup1 > div.col:first-child > .colgroup > .colset > aside + .col
+{
+  float: right;
+  width: 496px;
+}
+
+.colgroup1 > div.col:first-child + aside
+{
+  float: right;
+  width: 218px;
+}
+
+.colgroup2 > div.col
+{
+  width: 625px;
+}
+
+.colgroup2 > div.col > .colgroup > aside
+{
+  float: left;
+  width: 8%;
+  margin-right: 2.5%;
+}
+
+.colgroup2 > div.col > .colgroup > aside + div.col
+{
+  float: left;
+  width: 80%;
+}
+
+.colgroup2 > aside
+{
+  float: right;
+  width: 313px;
+}
+
+.colgroup2 > aside > .box > img:first-child
+{
+  float: left;
+  margin-right: 15px;
+}
+
+.colgroup2 > aside > .listA > li
+{
+  float: left;
+  width: 287px;
+  padding: 12px;
+}
+
+.colgroup2 > aside > .listA > li > img:first-child
+{
+  float: left;
+  margin: 0;
+}
+
+.colgroup2 > aside > .listA > li > .desc
+{
+  float: right;
+  width: 172px;
+}
+
+.colgroup2 > aside > .listA > li > .desc h5
+{
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* In-flow search bar */
+.colgroup2 > aside > form.box.search input.text
+{
+
+}
+
+.colgroup2 > aside > form.box.share input.text
+{
+  width: 150px;
+}
+
+.colgroup > div.col:first-child > .colgroup > .profile.colset > img:first-child
+{
+  width: 180px;
+}
+
+.colgroup > aside > .prev-next 
+{
+  margin-bottom: 60px;  
+  h1.prev
+  {
+    float: left;
+    color: $primary;
+  }
+  
+  h1.next
+  {
+    float: right;
+    color: $primary;
+  }
+  
+}

@@ -1,0 +1,77 @@
+- content_for(:navigation_item) { 'Groups' }
+#main.inwards.colgroup.colgroup2
+ .col
+  %section.colgroup.profile.profileB
+   = render :partial => "groups/inner_header", :locals => {page_name: "single", group: @group, joined_state: @joined_state, users: @users}
+   %section.discussion
+    %aside
+     =image_tag @discussion.user.avatar.url
+    %div
+     %h2= @discussion.title
+     %h3
+      =link_to @discussion.user.name, user_profile_path(@discussion.user)
+      %span= distance_of_time_in_words_to_now(@discussion.created_at).to_s + ' ago '
+     %p= @discussion.description
+     %menu
+      %li.follow
+       =link_to "Unfollow", "#"
+      - if @editable_state 
+       =link_to "Edit",  "#", :id => 'discussion_edit'
+            
+   %ul.comments
+    %div
+     Comments    
+     %span#comment-count 
+      = @comments_count.to_s 
+    %div.comment-wrap
+     - unless @comments.empty?     
+      - @comments.each do |comment|
+       - unless comment.body.nil? 
+        = render :partial => 'comments/comment', :locals => {:comment => comment, :editable_state => @editable_state}   
+          
+    .comment-form-wrap
+     %h3
+      Post a new comment
+     = form_for [@group, @discussion, Comment.new], :remote => true, :html => {:class => "add-comment"} do |comment_f|
+      = hidden_field_tag 'comment_type', 'discussion'  
+      = comment_f.text_area :body
+      = comment_f.submit "Add Comment", :class => "default_button"
+      
+ %aside
+  = render :partial => 'groups/aside_group_council', :locals => {:owners => @owners, :leaders => @leaders}  
+  = render partial: 'shared/event_ads'
+
+#modal_window.flag
+ %span#close
+  x
+ %h1 Flag Content
+ %p I am flagging this content because:
+ = form_tag flag_comments_path, :class => 'flag-content' do
+  %input{:name => "comment_id", :type => "hidden", :id => 'comment_id'}
+  %input{:name => "group_id",   :type => "hidden", :value => @group.id}
+  %div
+   %label{for: "innapropriate"}
+    This content is innapropriate
+   %input{name: "innapropriate", type: "checkbox"}
+  %div
+   %label{for: "off_topic"}
+    This content is off-topic
+   %input{name: "off_topic", type: "checkbox"}
+  %div
+   %label{for: "offensive"}
+    This content is offensive
+   %input{name: "offensive", type: "checkbox"}
+  -# %input{type: "submit", value: "Submit", class: "primaryButton"}
+  = submit_tag("Submit", class: "primaryButton")
+  
+#modal_window.edit
+ %span#close
+  x
+ %h1 Edit Discussion
+ = form_for [@group, @discussion], :html => { :class => "flag-content" } do |f|
+  %label{:for => "title"} Title:
+  = f.text_field :title, :value => @discussion.title
+  %label{:for => "description"} Description:
+  = f.text_area :description, :value => @discussion.description 
+  
+  = f.submit "Submit"

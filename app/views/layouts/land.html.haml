@@ -1,0 +1,69 @@
+
+%html{lang: :en}
+  %head
+    %title AroundYoga
+    %meta{charset: :"utf-8"}
+    %meta{name: :viewport, content: :"width=960"}
+
+    = stylesheet_link_tag :landing_styles, media: :all
+    = stylesheet_link_tag :print, media: :print
+    = yield(:stylesheets)
+ 
+    = javascript_include_tag :application
+    = yield(:javascripts)
+    
+    = csrf_meta_tag
+    = render partial: 'shared/favicons'
+
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv.js"
+  %body
+
+    %header#bar_header
+
+      %div= link_to "Sign In", new_user_session_path
+
+    #wrapper.gray_gradient
+
+      = render partial: 'shared/flash'
+
+      .inwards.world_map
+
+        %header
+          %hgroup
+            %h2
+              = link_to root_path do
+                = image_tag "around_yoga_big.png"
+            %h3
+              Join the community, meet interesting people
+              %br
+              Around you & Around the world
+
+        #main.colgroup.colgroup1
+
+          #content.col
+          
+            = yield
+            
+          %aside
+            %h3 Log In With
+            = render partial: "shared/social_logins"
+      %footer.outwards.smallest
+        .inwards
+
+          %nav
+            %ul
+              %li= link_to "About Us", about_us_path
+              %li= link_to "Privacy Policy", privacy_policy_path
+              %li= link_to "Terms", terms_path
+              %li= link_to "Advertisers", advertisers_path
+              %li= link_to "Contact Us", contact_us_path
+              %li= link_to "Help", help_path
+
+
+          %small &copy; Copyright 2012 Around Yoga. All rights reserved.
+
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'
+    :javascript
+      !window.jQuery && document.write('<script src=#{javascript_path('libs/jquery-1.9.0.min.js').inspect}><\/script>');
+    

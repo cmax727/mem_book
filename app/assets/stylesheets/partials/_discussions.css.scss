@@ -1,0 +1,115 @@
+﻿div.back_to_discussions {
+
+    margin: 16px 0px;
+    text-decoration: underline;
+
+}
+.discussion {
+   border-bottom: 1px solid #cdcdcd;
+}
+
+    .discussion > aside {
+        display: inline-block;
+        width: 91px;
+        height: 91px;
+        position: relative;
+        float: left;
+
+    }
+        .discussion > aside > img {
+            width: 81px;
+            height: 81px;
+            vertical-align: top;
+
+        }
+
+    .discussion > div {
+        display: inline-block;
+        width: 480px;
+        margin-left: 15px;
+        position: relative;
+        padding-bottom: 25px;
+    }
+
+        .discussion > div > h2 {
+            font-size: 18px;
+
+        }
+        .discussion > div > h3 {
+            font-size: 14px;
+        }
+            .discussion > div > h3 > a {
+                text-decoration: underline;
+            }
+            .discussion > div > h3 > span {
+                margin-left: 25px;
+            }
+
+
+    .discussion > div > menu {
+        display: block;
+        margin: 0px;
+        cursor: pointer;
+    }
+
+
+
+li.discussion {
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+ul.comments > div {
+    margin-bottom: 45px;
+}
+
+li.discussion > div {
+    width: 455px;
+}
+
+.discussion > div{
+    min-height: 91px;
+}
+
+li.discussion > div > menu {
+    float: right;
+}
+
+span.date-time {
+    position: relative;
+    top: 7.5px;
+    display: block;
+}
+
+
+div.comment-form-wrap {
+    border: 1px solid #cdcdcd;
+    padding: 25px;
+}
+
+    div.comment-form-wrap > h3 {
+        margin-bottom: 25px;
+
+    }
+form.add-comment {
+
+    text-align: center;
+}
+    form.add-comment > textarea {
+        width: 500px;
+        display: inline-block;
+    }
+
+     form.add-comment > input[type="submit"]{
+        display: block;
+        margin: 0px auto;
+     }
+
+li.flag {
+    background-image: image-url("flag_icon.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-top: 3px;
+    padding: 5px 5px 5px 20px;
+    cursor: pointer;
+}

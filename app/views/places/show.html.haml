@@ -1,0 +1,118 @@
+#main.inwards.colgroup.colgroup2
+  %hgroup
+    %h1 Places
+    %h2= @city.name if @render_type == 'city'
+    %h2= @region.name if @render_type == 'region'
+    %h2= @country.name if @render_type == 'country'
+
+  .col
+    %section.box.boxC.namecards.noScroll
+      %h2 
+        People 
+        %small= '(' + @peoples.size.to_s + ')'
+
+      %ul.listE
+        - @peoples.each do |people|
+          %li
+            = image_tag people.avatar.url, width: 81, height: 81, alt: :avatar
+            %h2= link_to people.name, user_profile_path(people)
+            %strong= people.profile.place
+      </ul>
+      = link_to "See All", "#", class: :loadMore
+
+
+    %section.box.boxC
+      - if @render_type == 'city'
+        - events = @events_near_city
+      - if @render_type == 'region'
+        - events = @events_near_region
+      - if @render_type == 'country'
+        - events = @events_near_country
+      %h2 
+        Events
+        %small= '(' + events.size.to_s + ')'
+
+      %ul.listC
+        - events.each do |event|
+          %li
+            .inner
+              %time<
+                %span= event.started_at.strftime("%A")
+                %span.cal
+                  %span= event.started_at.strftime("%b")
+                  %span= event.started_at.day
+    
+              %h2= link_to event.name, event_path(event)
+              %time= event.started_at.strftime("%A %d %B, %I%P") + " - " + event.ended_at.strftime("%A %d %B,%I%P")   
+              
+              %address
+                %span= event.address
+
+    %section.box.boxC
+      %h2
+        Groups
+        %small= '(' + @groups.size.to_s + ')'
+      %ul.listC.listD
+        - @groups.each do |group|
+          - unless group.owners.empty?
+            %li
+              .inner
+            
+                -# %aside
+                -# = image_tag group.avatar.url, width: 80, height: 80, alt: :avatar
+                -# %span
+                  -# By
+                  -# = link_to group.owners.first.name, user_profile_path(group.owners.first)
+                -# %time= distance_of_time_in_words_to_now(group.created_at).to_s + ' ago '
+              
+  
+                %section
+                  %h2= link_to group.name, latest_discussions_group_path(group)
+                  %p= group.description
+  
+                  %footer
+                    %menu
+                      <li class="follow"><a href="ajax.php" data-opposite-action="Unfollow" class="toggle-action">Follow</a>
+                      %li.comment
+                        = link_to "Comment (#{comments_count(group)})", '#'
+  
+  
+                    - unless group.discussions.empty?
+                      %span.meta
+                        Last post by
+                        = link_to group.discussions.last.user.name, user_profile_path(group.discussions.last.user)
+                        at
+                        %time= group.discussions.last.created_at.to_time.strftime('%I:%P')
+                      
+
+
+    %section.box.boxC
+      %h2
+        Places near
+        - if @render_type == 'city'
+          = @city.name
+        - if @render_type == 'region'
+          = @region.name
+        - if @render_type == 'country'
+          = @country.name            
+        %small
+          (numbers of users)
+      -# <h2>Places in #{@region.name} <small>(numbers of users)</small></h2>
+
+      .colgroup
+        .col
+          %ul.tags-meter
+            - if @render_type == 'city' || @render_type == 'region' 
+              - @near_cities.each do |city|
+                %li
+                  %span.meter{"data-value" => 40, :max => "100", :min => "1"}
+                    = link_to city.name, country_region_city_path(@country, @region, city)
+          
+            - if @render_type == 'country' 
+              - @near_regions.each do |region|
+                %li
+                  %span.meter{"data-value" => 40, :max => "100", :min => "1"}
+                    = link_to region.name, country_region_path(@country, region)
+  %aside
+    = render partial: 'shared/event_ads'                    
+      

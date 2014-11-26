@@ -1,0 +1,14 @@
+blockquote 
+{ 
+  margin-bottom: 1em; padding-top: .25em; 
+}
+
+blockquote p 
+{ 
+  margin-bottom: .5em; 
+}
+
+blockquote > .author 
+{ 
+  display: block; font-size: 1em; text-align: right; 
+}

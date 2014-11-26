@@ -1,0 +1,21 @@
+- content_for(:navigation_item) { 'Interests' }
+#main.inwards.colgroup.colgroup2
+  %hgroup.bottom_margin
+    %h1= "Interests / " + @interest.name
+    - if @interest.users.include?(current_user)
+      = link_to "Unfollow", unfollow_interest_path(@interest), :style => "margin-left: 20%;"
+    - else
+      = link_to "Follow", follow_interest_path(@interest), :style => "margin-left: 20%;"
+
+  .col
+
+    %section.box.boxC.namecards.noBorder.noScroll
+      %ul.listE
+        - @users.each do |user|
+          %li
+            = image_tag user.avatar.url, width: 81, height: 81, alt: :avatar
+            %h2= link_to user.name, user_profile_path(user)
+            %strong= user.profile.place
+
+  %aside
+    = render partial: 'shared/event_ads'

@@ -1,0 +1,63 @@
+menu > li > *
+{
+  display: block;
+  padding: 8px 0 8px 45px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+menu.dashboard > li > *
+{
+  padding: 8px 0px 8px 0px;
+  font-size: 16px;
+  font-family: $sansFont;
+}
+
+menu > li > a, menu > li > a:link, menu > li > a:visited
+{
+  text-decoration: none;
+}
+
+menu > .flag > *
+{
+  background-image: image-url('flag_icon.png');
+}
+
+menu > .block > *
+{
+  background-image: image-url('icon1_block.png');
+}
+
+menu > .follow > * {
+  padding: 3px 0 3px 20px;
+  background-image: image-url('bullet3-checkmark-black.png');
+}
+
+menu > .comment > *
+{
+  padding: 3px 0 3px 24px;
+  background-image: image-url('bullet5-bubble.png');
+}
+
+menu > input
+{
+  float: left;
+  width: 37px;
+  height: 0;
+  margin-right: 2px;
+  padding: 39px 0 0 0;
+  border-width: 0;
+  background-color: transparent;
+  cursor: pointer;
+  height: 37px;
+}
+
+menu > input.facebook
+{
+  background-image: image-url('icon4_facebook.png');
+}
+
+menu > input.twitter
+{
+  background-image: image-url('icon4_twitter.png');
+}

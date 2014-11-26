@@ -1,0 +1,24 @@
+- titles "User Login"
+
+#main.colgroup.colgroup1
+  #login
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      %h2 Sign In
+
+      %ul
+        %li
+          = f.label :email, class: "placeholder"
+          = f.text_field :email, autocomplete: :off, class: "text"
+        %li
+          = f.label :password, class: "placeholder"
+          = f.password_field :password, autocomplete: :off, class: "text"
+      %h6= link_to "Forgot password?", new_password_path(resource_name)
+
+      = f.submit "Login", class: "button submit"
+
+      %h6
+        By using #{Settings.app.name}, you agree to our
+        = link_to "User Agreement", terms_path
+        and
+        = link_to "Privacy Policy", privacy_policy_path
+

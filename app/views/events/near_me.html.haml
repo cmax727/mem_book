@@ -1,0 +1,47 @@
+- content_for(:page_title) { 'Events' }
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup2
+
+  %hgroup
+    %h1 Events
+    %h2 Find events around you and around the world
+    = link_to new_event_path do
+      %button.btn.btnB.headingButton{action: ""}
+        Create Event
+  .col
+    .book
+
+      %nav
+        %ul.tabs
+          %li= link_to 'All events', all_events_path
+          %li.on= link_to 'Near me', all_events_path
+        
+        %ul.locations
+          - if @render_type == 'near_city'
+            %li.on= link_to @city, near_city_events_path
+          - else
+            %li= link_to @city, near_city_events_path
+            
+          - if @render_type == 'near_region'
+            %li.on= link_to @region, near_region_events_path
+          - else
+            %li= link_to @region, near_region_events_path
+            
+          - if @render_type == 'near_country'
+            %li.on= link_to @country, near_country_events_path
+          - else
+            %li= link_to @country, near_country_events_path
+          
+         
+          
+      - case @render_type
+      - when 'near_city'
+        = render partial: 'event_detail', locals: {events: @events_near_city}
+      - when 'near_region'
+        = render partial: 'event_detail', locals: {events: @events_near_region}
+      - when 'near_country'  
+        = render partial: 'event_detail', locals: {events: @events_near_country}
+
+  %aside
+    = render partial: 'search'
+    = render partial: 'shared/event_ads'

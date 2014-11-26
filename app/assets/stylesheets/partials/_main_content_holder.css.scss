@@ -1,0 +1,88 @@
+#main
+{
+  position: relative;
+  z-index: 2;
+  min-height: 450px;
+  padding: 80px 0 46px;
+}
+
+#main > h1:first-child,
+#main > hgroup > h1:first-child,
+#main.colgroup > div.col > h1:first-child,
+#main.colgroup > div.col > hgroup > h1:first-child,
+#main.colgroup > div.col > .colgroup:first-child > .col > h1:first-child
+{
+  color: $primary;
+  font-family: $headingFont;
+  font-weight: 100;
+  font-size: 32px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.extra_bottom_margin
+{
+  margin-bottom: 15px;
+}
+
+#main > h1:first-child small,
+#main.colgroup > div.col > h1:first-child small
+{
+  color: $gray;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#main > hgroup
+{
+  float: left;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#main > hgroup h1
+{
+  display: inline;
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+#main > hgroup h1 + *
+{
+  margin: 5px 0 0;
+}
+
+#main > hgroup h2
+{
+  display: inline-block;
+  float: left;
+  margin-top: 16px;
+  font-size: 16px;
+  font-family: $bodyFont;
+}
+
+#main hgroup h2:after
+{
+  clear: both;
+}
+
+#main > hgroup h6
+{
+  float: left;
+  width: 50%;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+}
+
+
+a#show_more, a.show_more
+{
+  width: 100%;
+  text-align: right;
+  display: block;
+  margin-top: 10px;
+  color: $gray;
+  font-size: 12px;
+  font-weight: bold;
+}

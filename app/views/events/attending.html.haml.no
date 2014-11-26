@@ -1,0 +1,36 @@
+- content_for(:page_title) { 'Events' }
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup2
+  %hgroup
+    %h1 Events
+    %h2 Find events around you and around the world
+
+  .col
+    .book
+
+      %nav
+        %ul.tabs
+          %li= link_to 'All events', all_events_path
+          %li.on= link_to 'Friends Attending', attending_events_path
+          %li= link_to 'Near me', events_path
+          %li= link_to 'My Events', my_events_path
+
+      %section
+        %ul.listC
+          - 5.times do
+            %li
+              .inner
+                %time<
+                  <span>Thursday</span> <span class="cal"><span>Apr</span> <span>26</span></span>
+
+                <h2><a href="">Yoga in the park near the railway station</a></h2>
+
+                <time>Thursday 26th April, 2pm - 8pm</time>
+                <address><span>Directions</span> / <span>location</span> / <span>address</span><br />
+                <span>City</span>, <span>Country</span></address>
+                <span class="attending"><a href="people.html"><span>1</span> friend attending</a></span>
+
+  %aside
+    = render partial: 'search'
+    = render partial: 'create'
+    = render partial: 'shared/event_ads'

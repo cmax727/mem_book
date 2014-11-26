@@ -1,0 +1,55 @@
+form.share menu input
+{
+  margin-top: 2px;
+}
+
+form.share input.text
+{
+  float: right;
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+form.start-discussion
+{
+  padding-top: 33px;
+}
+
+form.start-discussion .btn
+{
+  margin: 0 auto 1em;
+}
+
+form.start-discussion p
+{
+  width: 50%;
+  min-height: 1px;
+  margin: 0 auto;
+  padding: 0 0 1em;
+  white-space: nowrap;
+}
+
+input,
+label,
+label > *
+{
+  vertical-align: middle;
+}
+
+input.text,
+input.smalltext,
+input.tinytext,
+textarea, select
+{
+  margin: 0;
+  padding: 5px 7px;
+  border: solid 1px #989898;
+  background-color: #fff;
+  color: $gray;
+  font-family: $bodyFont;
+  font-size: 1em;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  behavior: url('/components/PIe.htc');
+}

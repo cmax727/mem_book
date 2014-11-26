@@ -1,0 +1,10 @@
+
+var num = $('span#like-count').text();
+$('span#like-count').text(parseInt(num) + 1);
+
+var text = $('<p>Like Picture</p>');
+$('li.like a').replaceWith( text.html() );
+
+var my_css_class = { color : '#707174' };
+$('li.like').css(my_css_class);
+

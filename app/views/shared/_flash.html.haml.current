@@ -1,0 +1,13 @@
+- if flash
+  .flashmessages
+    - [:error, :warning, :notice, :alert].each do |level|
+      - if flash[level]
+        - if flash[level].is_a?(Array)
+          - flash[level].each do |message|
+            %div{class: level}<
+              %span.message= message
+              %span.close x
+        - else
+          %div{class: level}<
+            %span.message= flash[level]
+            %span.close x

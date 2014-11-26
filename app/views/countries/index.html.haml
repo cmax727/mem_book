@@ -1,0 +1,80 @@
+- content_for(:navigation_item) { 'Places' }
+
+- content_for :javascripts do
+  = javascript_include_tag 'libs/jquery.vmap.js'
+  = javascript_include_tag 'libs/jquery.vmap.world.js'
+#main.inwards.colgroup.colgroup2
+
+  %hgroup
+    %h1 Places
+    %h2 People, groups and events near you.
+
+    #edit_place_button
+      = image_tag 'map_icon_with_arrow.png', id: 'edit_place_expand', height: '50px', width: '45px'
+
+      %form.form_default{action: '#', name: :place_change}
+        <label for="country">Country</label>
+        <select id="country_select" name="country"></select>
+        <label for="state">State</label><input type="text" name="state"></input>
+        <label for="city">City</label><input type="text" name="city"></input>
+        <input type="submit" value="Apply" class="headingButton"></input>
+
+    %hr.clear
+
+    %h3#current_location
+      %span.underline= @city
+      %span.underline= @region
+      %span.underline= @country
+
+  .col
+    .box
+      %h2 
+        Places near
+        = @city
+
+      .colgroup
+
+        .places_column
+          %ul.places_tags
+            - @near_regions.each do |region|
+              %li<
+                %span.place_tag= link_to region.name, show_all_on_place_countries_path(region.name)
+ 
+
+  %aside
+
+    %form{method: :post, action: '#', class: 'mini search box sideSearch'}
+      <input type="text" name="" class="text" id="content-search-query" value="eg: &ldquo;Yoga on 17th May&rdquo;" data-default-value="eg: &ldquo;Yoga on 17th May&rdquo;" />
+      <input type="submit" value="Search" class="button submit" />
+
+
+    = render partial: 'shared/event_ads'
+
+  %hr.clear
+
+
+  #map_area
+    #map{:style => "width: 800px; height: 800px;"}
+    %script{:src => "libs/jquery-1.9.0.min.js", :type => "text/javascript"}
+
+    :javascript
+      $(function() {
+        alert("ok");
+        $('#map').vectorMap({
+          map: 'world_en',
+          backgroundColor: '#fff',
+          borderColor: '#fff',
+          borderOpacity: 0.5,
+          borderWidth: 2,
+          color: '#a5bfdd',
+          enableZoom: true,
+          normalizeFunction: 'polynomial',
+          hoverOpacity: 0.7,
+          hoverColor: '#c9dfaf',
+          selectedColor: '#666666',
+          showTooltip: true,
+          onRegionClick: function(element, code, region) {
+            alert("`" + region + "` clicked!");
+          }
+        });
+      }) 

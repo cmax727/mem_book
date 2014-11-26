@@ -1,0 +1,50 @@
+%header.outwards
+  .inwards
+
+
+    %nav
+      %ul
+        %li{class: (yield(:navigation_item) === "Home") ? "on" : ""}
+          = link_to 'Home', dashboard_path, title: 'Back to the Home Page', id: 'Home', accesskey: 'H'
+        %li{class: (yield(:navigation_item) === "Events") ? "on" : ""}
+          = link_to 'Events',    all_events_path,    accesskey: '1'
+        %li{class: (yield(:navigation_item) === "Places") ? "on" : ""}
+          = link_to 'Places',    places_path,    accesskey: '2'
+        %li{class: (yield(:navigation_item) === "Groups") ? "on" : ""}
+          = link_to 'Groups',  popular_groups_path,    accesskey: '3'
+        %li{class: (yield(:navigation_item) === "Interests") ? "on" : ""}
+          = link_to 'Interests', interests_path, accesskey: '4'
+
+    #updates
+      = link_to inbox_path, :class => "mail" do
+        - unless current_user.received_messages.where('read_at is null').size == 0
+          %span.meter= current_user.received_messages.where('read_at is null').size  
+        
+
+  
+
+      .notifications
+        %span.meter 
+        %ul
+          %h2
+            Notifications
+          <li><a href=""><span>3</span> new comments on your pictures</a></li>
+          <li><a href=""><span>4</span> posts in a discussion you posted in</a></li>
+          <li><a href=""><span>Rafaela Bing</span> commented <span>"Hey! Where have you been?"</span> on your profile</a></li>
+
+      .settings
+        %ul
+          %h2
+            Settings
+          %li= link_to "View Profile", user_profile_path(current_user)
+          %li= link_to "Edit Profile", edit_user_profile_path(current_user)
+          %li= link_to "Account Settings", settings_path
+          %li= link_to "Logout", destroy_user_session_path
+
+
+    %aside
+      %form{action: search_path, autocomplete: :off}
+
+        <label for="header-search-query" class="placeholder">Search People, Events and Places</label>
+        <input type="text" name="search_query" class="text" id="header-search-query" />
+        <input type="submit" value="" id="header-submit"/>

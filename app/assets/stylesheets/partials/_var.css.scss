@@ -1,0 +1,49 @@
+/* if you want to return to the default color scheme, this is the hex code */
+
+  $default: #3A8C00;
+
+/* gray/lightgray/darkgray are used throughout the site for things like headers, the few places we have boxes */
+$gray: #231F20;
+$lightgray: #707174;
+$darkgray: #222;
+$offwhite: #cdcdcd;
+
+/* Red Hex code given to us by the logo designers */
+$red: #ed1c24;
+
+/* primary color (headings, etc.)  currently set to a dark gray */
+$primary: #707174;
+
+/*secondary color, just lightened to complement the primary one (can also be set to a hard value - it's not used much) */
+$secondary: lighten($primary, 30%);
+
+/* main body font (<p>, etc)*/
+$bodyFont: Helvetica, sans-serif;
+
+/* used for some body text, mostly used for the buttons so that they look a bit cleaner */
+$sansFont: 'Open Sans', sans-serif;
+
+/*used for the headlines, sidebar headings */
+$headingFont: 'Futura Light';
+
+/*button primary = start gradient color (auto darkens), button hover = color on button hover, button text color = button text color, button hover text color = button text color on hover */
+$buttonPrimary: $red;
+$buttonHover: #222;
+$buttonTextColor: #FFF;
+$buttonHoverTextColor: #fff;
+
+/*
+For the bottom social buttons, I have them as gray and turning to their colors on hover
+to change this you just need to go go the "landing_footer" scss file and and find a.twitter, a.facebook
+and switch the 3s and 4s in the urls.
+
+Don't know if this will be changing, but just an FYI.
+*/
+
+
+/*
+this one controls the color of the tiles on the front page (discover, groups, events)
+*/
+$homeTilesPrimary: $lightgray;
+
+$homeTilesTextColor: #FFF;

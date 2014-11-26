@@ -1,0 +1,35 @@
+- content_for(:page_title) { 'Message' }
+- content_for(:navigation_item) { 'Home' }
+#main.inwards.colgroup.colgroup2
+  %hgroup
+    %h1
+      Message with
+      %span.highlight
+        = link_to @user.name, user_profile_path(@user)
+    =link_to "Reply +", "#", id: "reply_message"
+
+  .col
+    #message_body
+      %ul
+        - @messages.each do |msg|
+          %li
+            %span.date= msg.created_at.to_date.to_formatted_s(:long).split(',')[0]
+            = image_tag(msg.user.avatar.url, alt: :avatar)
+            %h1= link_to msg.user.name, '#'
+            %p
+              = msg.body
+              
+  %aside
+    = render partial: 'shared/event_ads'  
+    
+#modal_window
+  %span#close x
+  %h1 Reply
+  -# %form#new_message_form{ :action => user_messages_url(@user, :only_path => false), :method => :post }
+  = form_for [@user, @message], :html => { :id => "new_message_form" } do |msg|   
+    = hidden_field_tag 'message_type', 'reply_message'  
+    %label.breakLine{:for => "message"} Message:
+    = msg.text_area :body
+    = msg.submit "Send"
+    
+          

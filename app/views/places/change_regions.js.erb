@@ -1,0 +1,3 @@
+$('#place_near h2').text("<%= @country.name %>");
+
+$('#place_near .colgroup .places_tags').html("<%= escape_javascript("#{render :partial => "near_regions", :locals => {:near_regions => @regions, :country => @country}}").html_safe %>");

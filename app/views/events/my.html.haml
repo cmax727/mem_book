@@ -1,0 +1,26 @@
+- content_for(:page_title) {'Events'}
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup2
+  %hgroup
+    %h1 Events
+    %h2 Find events around you and around the world
+    = link_to new_event_path do
+      = render partial: 'create'
+  .col
+    .book
+
+      %section
+
+        .box.boxB
+          %h3
+            Events I Created
+
+          = render partial: 'my_event_detail', locals: {events: @owner_events, render_type: "created"}
+        .box.boxB
+          %h3
+            Events I'm Attending
+
+          = render partial: 'my_event_detail', locals: {events: @attender_events, render_type: "attending"}
+  %aside
+    = render partial: 'search'
+    = render partial: 'shared/event_ads'

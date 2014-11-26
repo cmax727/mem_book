@@ -1,0 +1,18 @@
+.box.boxB
+ %h3
+  Share #{page_name}
+ %ul.share-mini
+  - if @facebook
+   %li#facebook-sm
+    - if page_name == "Event"
+     = link_to "Share on Facebook", share_facebook_event_path(@event), :method => :post
+    - if page_name == "Group" 
+     = link_to "Share on Facebook", share_facebook_group_path(@group), :method => :post
+    
+  - if @twitter
+   %li#twitter-sm
+    = link_to "Share on Twitter", "#"
+   
+  - if @google
+   %li#gplus-sm
+    = link_to "Share on Google Plus", "#"

@@ -1,0 +1,24 @@
+= form_for(@user, url: register_path) do |f|
+  %h3 Sign up ! It's free
+  / <haml:loud> devise_error_messages! </haml:loud>
+  %ul
+    %li
+      %span.formerror
+      -# %label.placeholder{for: 'fullname'} Full name
+      = f.text_field :name, class: "text", placeholder: "Full name"
+  %ul
+    %li
+      %span.formerror
+      -# %label.placeholder{for: 'email'} Email
+      = f.text_field :email, class: "text", id: "email", placeholder: "Email"
+  %ul
+    %li
+      %span.formerror
+      -# %label.placeholder{for: 'password'} Password
+      = f.password_field :password, class: "text", id: "password", placeholder: "Password"
+  %small
+    By clicking “Sign Up” or using AroundYoga, you agree to our
+    %a{:href => "#"} User Agreement
+    and
+    %a{:href => "#"} Privacy Policy
+  = f.submit "Sign up", class: "button submit big"

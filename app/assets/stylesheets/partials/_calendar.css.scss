@@ -1,0 +1,36 @@
+.cal
+{
+  clear: both;
+  display: block;
+  height: 100px;
+  background: image-url("bullet4_calendar_86.png") 0 0 no-repeat;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cal > span:first-child
+{
+  display: block;
+  padding-top: 3px;
+  height: 26px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.cal > span:first-child + span
+{
+  display: block;
+  margin-top: 1px;
+  height: 45px;
+  font-size: 28px;
+  line-height: 45px;
+}
+
+time.cal
+{
+  float: left;
+  width: 86px;
+  margin: 0 8px 0 -4px;
+}

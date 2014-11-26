@@ -1,0 +1,93 @@
+.inner
+{
+  padding: 15px 15px 1px;
+}
+
+.section
+{
+  margin-bottom: 2em;
+}
+
+.outwards
+{
+  width: 100%;
+  min-width: 980px;
+}
+
+.inwards
+{
+  width: 990px;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.overlay
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.overlay.legend
+{
+  top: 0;
+  left: 0;
+}
+
+.loading
+{
+  display: block;
+  min-height: 50px;
+  background: image-url('loading.gif') 50% 50% no-repeat;
+}
+
+/* Custom Columns */
+.colgroup1 > .colA
+{
+  width: 50%;
+}
+
+.colgroup1 > .colB
+{
+  float: right; width: 50%;
+}
+
+#wrapper
+{
+  width: 100%;
+  margin: 0 auto;
+}
+
+#wrapper.gray_gradient
+{
+  background: #eceaea image-url('grad1.png') repeat-x;
+}
+
+#wrapper > .world_map
+{
+  background: image-url('bg-world-map.jpg') 50% 128px no-repeat;
+}
+
+#wrapper > .inwards > #main
+{
+  padding: 32px 204px;
+}
+
+#wrapper > .inwards > #main h3 {
+  color: $primary;
+  font-size: 30px;
+  margin-bottom: 18px;
+  font-family: 'Futura Light', sans-serif;
+}
+
+#wrapper > .inwards > #main > #content {
+  width: 288px;
+}
+
+h1{
+color: $primary;
+font-size: 30px;
+font-family: "Futura Light";
+}

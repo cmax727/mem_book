@@ -1,0 +1,19 @@
+%li.discussion
+ %aside       
+  = image_tag comment.user.avatar.url, alt: :avatar
+ %div
+  %h3
+   = link_to comment.user.name, user_profile_path(comment.user)
+  %p
+   = comment.body
+  %menu
+   %li.flag{:id => "flag_#{comment.id}"}= "Flag(#{comment.flags.size})"
+   - if editable_state 
+    %li
+     = link_to 'Delete', comment_path(comment), :method => :delete
+  %span.date-time
+   Posted On
+   %span.date
+    = comment.created_at.to_date.to_formatted_s(:long) |
+   %span.time
+    = comment.created_at.to_time.strftime('%I:%M%P')

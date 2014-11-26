@@ -1,0 +1,7 @@
+.box
+ %ul
+  %li.report
+   = link_to "Report #{page_name}", "#"
+  - if page_name === "user"
+   %li.block
+    = link_to "Block user"

@@ -1,0 +1,196 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'jquery_ui/jquery.tagit.css'
+
+
+#main.inwards.colgroup.colgroup1
+  .col
+    .colgroup
+      .colset.profile
+        .col
+          .thumb            
+            = link_to image_tag(@user.avatar.url, width: 180, height: 180, alt: :avatar), user_pictures_path(@user)
+
+        %section.col
+                    
+          %hgroup
+            %h1
+              = @user.name + ' -'
+              - if age_of_user(@profile.birthday).to_s == '0'
+                %small= @profile.gender.to_s
+              - else   
+                %small= age_of_user(@profile.birthday).to_s + ' ' + @profile.gender.to_s
+            %h2.location= @profile.place
+
+
+          %footer
+            %menu
+              - unless @user == current_user
+                - if @friend_status == "Add Friend"
+                  = link_to @friend_status, user_friend_request_path(@user), :method => :post, class: 'primaryButton profileButton'
+                - else
+                  = link_to @friend_status, '#', class: 'primaryButton profileButton toggle-action'
+                = link_to 'Send Message', '#', class: 'primaryButton profileButton', id: 'sendMessage'
+              - else 
+                = link_to "Edit My Profile", edit_user_profile_path(@user), class: 'default_button black editBtn'
+
+
+
+      .colset
+        %aside
+
+          %section.box.boxB
+            %h2 <span>Groups I Manage</span>
+            %ul
+              - @owner_groups.each do |group|
+                %li= link_to group.name, latest_discussions_group_path(group)
+            - if @owner_groups.size > 10
+              = link_to 'more ...', '#', class: :more
+
+          %section.box.boxB
+            %h2 <span>Groups Memberships</span>
+            %ul
+              - @member_groups.each do |group|
+                %li= link_to group.name, latest_discussions_group_path(group)
+            - if @member_groups.size > 10
+              = link_to 'more ...', '#', class: :more
+
+
+        .col
+          .book
+
+            %section
+              %p
+                %strong Relationship Status:
+                = @profile.relationship_status 
+              %article
+                %h5 What am I doing here / Why am I here?
+
+                %ul
+                  - for goal in Goal.all
+                    - if !@goals.nil? && @goals.include?(goal.id.to_s)
+                      %li= goal.name
+
+              %article.aboutMe
+                %h5 About me
+                = link_to "Edit", '#', :id => "aboutMe_edit"
+                %p= @profile.about_me
+
+              %article.latestNews
+                %h5
+                  Latest Activity
+                %ul
+                  - @activities.each do |activity|
+                    %li
+                      = display_activity(activity)
+                      %span.date= activity.created_at.strftime("%B %d")
+                      
+              %article.interest
+                -# .section_header
+                %h5 Interests
+                - if @user == current_user
+                  .interest_control
+                    = link_to "Cancel", "javascript:void(0);", :id => "interest_cancel"
+                    = link_to "Edit", "javascript:void(0);", :id => "interest_edit"
+                    = link_to "Save", "javascript:void(0);", :id => "interest_save"
+                %br  
+                %ul.tags
+                  - @interests.each do |interest|
+                    %li= link_to interest.name, interest_path(interest)
+                %ul#myTags
+                  - @interests.each do |interest|
+                    %li= link_to interest.name, interest_path(interest)
+
+
+                         
+                  
+  %aside
+    .box.boxB.groupA
+
+      %section
+        %h5 
+          Friends
+          %small= '(' + @friends.size.to_s + ')'
+        %ul
+          - @friends.each do |friend|
+            %li<
+              -# = link_to user_path(1) do
+              = link_to user_profile_path(friend) do
+                = image_tag friend.avatar.url(:thumb), alt: :avatar
+
+        - if @friends.size > 10
+          = link_to 'more ...', '#', class: 'more'
+
+      %section
+        %h5 
+          Mutual Friends
+          %small= '(' + @mutual_friends.size.to_s + ')'
+        %ul
+          - @mutual_friends.each do |mutual|
+            %li<
+              -# = link_to user_path(1) do
+              = link_to user_profile_path(mutual) do
+                = image_tag mutual.avatar.url(:thumb), alt: :avatar
+
+        - if @mutual_friends.size > 10
+          = link_to 'more ...', '#', class: 'more'
+
+      %section
+        -# %h5 Pictures <small>(211)</small>
+        %h5
+          = link_to "Pictures", user_pictures_path(@user)
+          %small= '(' + @user.pictures.size.to_s + ')'
+        %ul
+          - @user.pictures.each do |p|
+            %li<
+              = link_to image_tag(p.avatar1.url(:thumb), alt: :avatar), user_picture_path(@user, p)
+
+        - if @user.pictures.size > 10
+          = link_to 'more ...', '#', class: 'more'
+    
+    %section.box.boxB
+      %h2<
+        %span Events
+
+
+      %ul.listB
+        - @events.each do |event|
+          %li
+            = link_to event.name, event_path(event)
+            %time= event.started_at.day.to_s + ' ' + event.started_at.strftime("%b") + ' - ' + event.ended_at.day.to_s + ' ' + event.ended_at.strftime("%b")
+            
+      - if @events.size > 10
+        = link_to 'more ...', '#', class: 'more'
+        
+    = render :partial => "shared/report", :locals => {:page_name => "user"}
+    .box.boxA
+      = image_tag 'thumb_placeholder2.jpg', width: 102, height: 102, alt: :thumbnail
+      %p Seshank - Here is where you can upload your own images and text to display to the users...
+
+#modal_window
+  %span#close x
+  %h1 New Message
+  -# %form#new_message_form{ :action => user_messages_url(@user, :only_path => false), :method => :post }
+  = form_for [@user, @message], :html => { :id => "new_message_form" } do |msg| 
+    = hidden_field_tag 'message_type', 'profile_message'   
+    %label{:for => "to"} To:
+    = msg.text_field :recipient, :value => @user.name, :disabled => ""
+    -# %input{:disabled => "", :name => "to", :type => "text", :value => @user.name}/
+
+    -# %input{:name => "subject", :type => "text"}/
+    
+    %label.breakLine{:for => "message"} Message:
+    = msg.text_area :body
+    -# %textarea{:name => "message"}
+    = msg.submit "Send"
+    -# %input{:type => "submit", :value => "Send", :class => "send_message"}/
+    
+    
+#modal_window.aboutMe_edit
+  %span#close.aboutMe_edit x
+  %h1 New Message
+  = form_for [@user, @profile], :method => :put, :html => { :id => "new_message_form" } do |p| 
+    = hidden_field_tag 'update_type', 'aboutMe'
+    %label.breakLine{:for => "about_me"} About Me:
+    = p.text_area :about_me
+    = p.submit "Change"
+

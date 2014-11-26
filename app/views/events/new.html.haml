@@ -1,0 +1,38 @@
+- content_for (:page_title) { 'Events' }
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup1
+  #form_wrap
+    %h1 Create Event
+    = form_for @event, :html => { :id => "create_event_form", :class => "form_default" } do |f|
+      <label for="name">Event Name:</label>
+      = f.text_field :name
+      <span class="formDescription">E.G. Yoga at the Railroad Tracks</span>
+      <label for="description">Event Description:</label>
+      = f.text_area :description
+      <span class="formDescription">A description of your event</span>
+      <label for="place">Place:</label>
+      
+      = select_tag "country", options_from_collection_for_select(@countries, "country_pk", "name", :selected => @country.country_pk), :id => "profile_country"
+      = select_tag "region",  options_from_collection_for_select(@regions, "region_pk", "name", :selected => @region.region_pk), :id => "profile_region"
+      = select_tag "city",    options_from_collection_for_select(@cities, "city_pk", "name", :selected => @city.city_pk), :id => "profile_city"
+
+      <span class="formDescription">E.G. Eagan, Minnesota, USA</span>
+      <label for="place">Address:</label>
+      = f.text_area :address
+      <span class="formDescription">E.G. 121 5th Street</span>
+
+      <label for="start-time", class = "date_label">Start Time:</label>
+      = f.datetime_select(:started_at, :start_year => 1990, :default => Time.now, :datetime_separator => "", :time_separator => "", :ampm => true)
+      <label for="end-time", class = "date_label">End Time:</label>
+      = f.datetime_select(:ended_at, :start_year => 1990, :default => Time.now, :datetime_separator => "", :time_separator => "", :ampm => true)
+      
+      <label for="contact">Contact Information:</label>
+      = f.text_area :contact
+      <span class="formDescription">A phone number or email address</span>
+      <label for="cost">Cost (optional):</label>
+      = f.text_field :cost
+      
+      <span class="formDescription">E.G. Suggested Donation $5, Free</span>
+      = f.submit "Create Event", :class => 'default_button'
+  %aside
+

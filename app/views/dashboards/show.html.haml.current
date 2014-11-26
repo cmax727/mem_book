@@ -1,0 +1,118 @@
+#main.inwards.colgroup.colgroup1
+  .col
+    :plain
+
+      <form method="post" action="#" class="update-status">
+        <textarea name="status" rows="7" cols="65" data-value="Update Status"></textarea>
+
+        <fieldset class="more">
+
+          <input type="submit" value="Post" class="button submit">
+          <input type="checkbox" id="" class="checkbox" style="display: none; "><span class="checkbox" data-name="undefined"><em class="checkmark"></em></span> <label for="">Post to blog</label>
+
+        </fieldset>
+
+      </form>
+
+      <div class="book bookA">
+        <nav>
+          <ul>
+            <li class="on"><a href="">All</a></li>
+            <li><a href="">Groups</a></li>
+            <li><a href="">Posts</a></li>
+            <li><a href="">Pictures</a></li>
+          </ul>
+        </nav>
+        <section>
+          <ul class="listH">
+            <li>
+              <aside>
+                #{image_tag("thumb_54x54_jennifer-coyier.jpg", width: 54, height: 54, alt: "avatar")}
+                <time>3m ago</time>
+              </aside>
+              <article>
+                <h5>Jennifer Coyier</h5>
+                <p>Vestibulum at diam neque, in vehicula tortor. Vivamus ac neque eros. Aliquam erat volutpat. Nullam in neque id dolor pulvinar pulvinar <a href="">sit amet non nisi</a>. Vivamus tellus turpis, tincidunt eu molestie venenatis, dictum at arcu. Nullam in neque id dolor pulvinar pulvinar.</p>
+              </article>
+            </li>
+            <li>
+              <aside>
+                #{image_tag("thumb_54x54_dave-smith.jpg", width: 54, height: 54, alt: "avatar")}
+                <time>15m ago</time>
+              </aside>
+              <article>
+                <h5>Dave Smith</h5>
+                <p>#{image_tag("thumb_placeholder1.jpg", width: 82, height: 80, class: "port")}Vestibulum at diam neque, in vehicula tortor. Vivamus ac neque eros. Aliquam erat volutpat. Nullam in neque id dolor pulvinar pulvinar sit amet non nisi. Vivamus tellus turpis, tincidunt eu molestie venenatis, dictum at arcu. Vivamus tellus turpis, tincidunt eu.</p>
+              </article>
+            </li>
+            <li>
+              <aside>
+                #{image_tag("thumb_54x54_ben-keane.jpg", width: 54, height: 54, alt: "avatar")}
+                <time>4h ago</time>
+              </aside>
+              <article>
+                <h5>Ben Keane</h5>
+                <p>Morbi volutpat varius ante non facilisis. Curabitur quis tortor quis arcu tristique volutpat. Cras lectus nisi, porttitor ac scelerisque nec, commodo eget risus. Cras lectus nisi, porttitor ac scelerisque nec.</p>
+              </article>
+            </li>
+            <li>
+              <aside>
+                #{image_tag("thumb_54x54_sarah-lanxon.jpg", width: 54, height: 54, alt: "avatar")}
+                <time>18h ago</time>
+              </aside>
+              <article>
+                <h5>Sarah Lanxon</h5>
+                <p>Etiam nec arcu nulla. Cras facilisis justo laoreet turpis consequat congue. Praesent sollicitudin rhoncus lorem. Cras facilisis justo laoreet turpis consequat congue. Turpis consequat congue.</p>
+              </article>
+            </li>
+            <li>
+              <aside>
+                #{image_tag("thumb_54x54_laura-jones.jpg", width: 54, height: 54, alt: "avatar")}
+                <time>1d ago</time>
+              </aside>
+              <article>
+                <h5>Laura Jones</h5>
+                <p>Sed aliquam ornare tempus. Sed dolor leo, ultrices sed dictum eu, tristique aliquet nibh. Nullam felis arcu, accumsan eu ornare vitae, sagittis a justo. Sed congue, erat eu tempus pellentesque, sapien dui aliquam erat, ac accumsan lorem tortor nec orci. Sed semper accumsan orci, sit amet posuere orci auctor quis. Vivamus a tellus auctor arcu venenatis viverra. sit amet posuere orci auctor quis. Vivamus a tellus auctor arcu venenatis viverra.</p>
+              </article>
+            </li>
+            <li>
+              <aside>
+                #{image_tag("thumb_54x54_sean-cocker.jpg", width: 54, height: 54, alt: "avatar")}
+                <time>3w ago</time>
+              </aside>
+              <article>
+                <h5>Sean Cocker</h5>
+                <p>Nullam felis arcu, accumsan eu ornare vitae, sagittis a justo. Sed congue, erat eu tempus pellentesque, sapien dui aliquam erat, ac accumsan lorem tortor nec orci. Gittis a justo. Sed congue.</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+  %aside
+    :plain
+
+      <section class="box boxB">
+        <h2><span>Dashboard</span></h2>
+        <menu>
+          <li class="inbox"><a href="">Inbox</a></li>
+          <li class="friends"><a href="">Friends</a></li>
+          <li class="upload-picture"><a href="">Upload picture</a></li>
+          <li class="invite-friends"><a href="">Invite friends</a></li>
+        </menu>
+      </section>
+
+      <ul class="listA">
+        <li>
+          #{image_tag("thumb_placeholder2.jpg", width: 102, height: 103, alt: "Thumbnail")}
+          <p>Seshank - Here is where you can upload your own images and text to display to the users...</p>
+        </li>
+        <li>
+          #{image_tag("thumb_placeholder3.jpg", width: 102, height: 103, alt: "Thumbnail")}
+          <p>Seshank - Here is where you can upload your own images and text to display to the users...</p>
+        </li>
+        <li>
+          #{image_tag("thumb_placeholder4.jpg", width: 102, height: 103, alt: "Thumbnail")}
+          <p>Seshank - Here is where you can upload your own images and text to display to the users...</p>
+        </li>
+      </ul>

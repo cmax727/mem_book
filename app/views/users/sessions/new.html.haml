@@ -1,0 +1,25 @@
+- content_for(:page_title) { "User Login" }
+
+#main.colgroup.colgroup1
+  #login
+    %aside.sideAlign
+      %h3.pushBottom Log In With
+      = render partial: 'shared/social_logins'      
+    = form_for(resource, :as => resource_name, :class => "landingForm", :method => "post", :url => session_path(resource_name)) do |f|
+      %h1 Sign In
+      %ul
+        %li
+          %span.formerror 
+          %label.placeholder{for: :email} Email
+          = f.text_field :email, :id => "email", :class => "text"
+        %li
+          %span.formerror 
+          %label.placeholder{for: :password} Password  
+          = f.password_field :password         
+      = f.submit "Log in", :class => "button submit"
+      %h6= link_to 'Forgot Password?', new_user_password_path
+      %h6= link_to 'Resend Confirmation Email', new_user_confirmation_path
+      %h6= link_to 'Resend Unlock Instructions'
+      %h6
+        %small By using AroundYoga, you agree to our <a href="">User Agreement</a> and <a href="">Privacy Policy</a>
+

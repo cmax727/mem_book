@@ -1,0 +1,53 @@
+- content_for(:page_title) { 'Event' }
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup2
+ .col.profile.profileA
+  %header
+   %time.cal{datetime: "2012-04-26"}
+    %span
+     Apr
+    %span
+     26
+   %h1
+    Yoga in the park near the railway station
+   %time{datetime: "2012-14-26T14:00-20:00"}
+    Thursday 26th April, 2pm - 8pm
+   %span
+    $63 for whole day session including refreshments
+  %section
+   %h3
+    Location
+   %article
+    %p
+     Lorem ipsum dolor sit amet dunamicus qui sequituries.
+   %h3
+    Contact
+   %ul
+    %li
+     %span
+      Tel:
+     %span
+      (651) 683-6800
+    %li
+     %span
+      Email:
+     = link_to "yogaruby@yahoo.co.uk", "mailto:yogaruby@yahoo.co.uk"
+  %section
+   %h3
+    Description
+   %article
+    %p
+     Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+ %aside
+  .box.boxB
+   = image_tag "thumb_81x81_seshank-vemuri.jpg"
+   .desc
+    %span.label
+     Event created by
+    %h2
+     =link_to "Seshank Vemuri", "#"
+    %address
+     Eagan, Minneapolis, USA
+  = render :partial => "shared/share", :locals => {:page_name => "Event"}
+  = render partial: 'shared/event_ads'

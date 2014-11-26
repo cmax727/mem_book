@@ -1,0 +1,17 @@
+#main.colgroup.colgroup1
+  #passreset
+    = form_for(@user, as: :user, url: password_path(:user), html: { method: :put }) do |f|
+      = f.hidden_field :reset_password_token
+
+      %h2 Reset your password:
+
+      %ul
+        %li<
+          = f.label :password, "New password", class: :placeholder
+          = f.password_field :password, id: :password, class: :text, autocomplete: :off
+
+        %li<
+          = f.label :password_confirmation, "Confirm new password", class: :placeholder
+          = f.password_field :password_confirmation, id: :password_confirmation, class: :text, autocomplete: :off
+
+      = f.submit "Change my password", class: "button submit"

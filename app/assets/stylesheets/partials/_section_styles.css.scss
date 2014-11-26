@@ -1,0 +1,30 @@
+section
+{
+  margin-bottom: 1em;
+}
+
+section > h2:first-child,
+section > h3:first-child,
+section header > h2,
+section header > h3
+{
+  color: $primary;
+}
+
+section > h2 small
+{
+  color: $gray;
+  font-size: 14px;
+}
+
+section > a.more
+{
+  float: right;
+  margin-right: .5em;
+}
+
+section > footer
+{
+  clear: both;
+  padding-top: 1em;
+}

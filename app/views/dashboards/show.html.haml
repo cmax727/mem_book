@@ -1,0 +1,50 @@
+- content_for(:page_title) { 'My Dashboard' }
+- content_for(:navigation_item) { 'Home' }
+
+#main.inwards.colgroup.colgroup1
+  .col
+    -# %form.update-status{method: :post, action: '#'}
+    = form_for [@user, @update_status] do |f|
+      = f.text_area :context
+      = f.submit "Post"
+      
+    .book.bookA
+      %nav
+        %ul
+          %li.on
+            = link_to "All", dashboard_path
+          %li  
+            = link_to "Groups", group_feed_path
+          
+
+      %section
+        %ul.listH
+          - @activities.each do |activity|
+            %li
+              %aside
+                = image_tag activity.user.avatar.url, width: 54, height: 54, alt: :avatar
+                %time= activity.created_at.strftime("%B %d")
+  
+              %article
+                %h5= link_to activity.user.name, user_profile_path(activity.user)
+                %p= display_activity(activity)
+
+
+
+  %aside
+    %section.box
+      %h2<
+
+
+
+      %menu.dashboard
+        %li= link_to 'Inbox', inbox_path
+        %li= link_to 'Friends', people_path
+        %li= link_to 'Upload Picture', upload_picture_user_pictures_path(@user)
+        %li= link_to 'My Groups', my_groups_path
+        %li= link_to 'My Events', my_events_path
+        %li<
+          = link_to "Friend Requests (#{@user.requested_friends.size})", user_friend_requests_path(@user)
+
+    = render partial: 'shared/ads'
+

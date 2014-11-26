@@ -1,0 +1,61 @@
+#current_location
+{
+  color: black;
+}
+
+
+#current_location > span.underline
+{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#near_me
+{
+  list-style-type: none;
+}
+
+#near_me li
+{
+  margin-top: 5px;
+  border-bottom: 1px solid black;
+  display: inline-block;
+}
+
+#main > #map_area
+{
+  width: 960px;
+  height: 475px;
+  padding: 0px;
+  display: block;
+  position: relative;
+}
+
+.places_column
+{
+  
+  float: left;
+  height: 100%;
+}
+
+.places_column li
+{
+  width: 33%;
+  float: left;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+#edit_place
+{
+  float: right;
+}
+
+h2.location{
+  padding-left: 25px;
+  margin-top: 5px;
+  background: image-url("map_icon.png");
+  background-size: 18px, 18px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}

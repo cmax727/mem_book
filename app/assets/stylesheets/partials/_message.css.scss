@@ -1,0 +1,108 @@
+h1 span.highlight
+{
+  color: $primary;
+}
+
+#message_body
+{
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+#message_body ul
+{
+  position: relative;
+}
+
+#message_body ul li
+{
+  border-top: 1px solid #aaa;
+  padding-top: 7.5px;
+  position: relative;
+}
+
+#message_body ul li h1
+{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#message_body ul li img
+{
+  float: left;
+  height: 25px;
+  width: 25px;
+  margin-right: 15px;
+}
+
+#message_body ul li span.date
+{
+  position: absolute;
+  left: 550px;
+  font-weight: bold;
+  color: $lightgray;
+}
+
+
+#reply_message
+{
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  padding: 4px 6px;
+  left: 55px;
+  top: 5px;
+  color: $offwhite;
+  font-size: 14px;
+}
+
+#reply_message:hover
+{
+  border: 1px solid #555;
+  color: $gray;
+}
+
+#reply_form
+{
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+#reply_form label
+{
+  margin-top: 5px;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+  width: 75px;
+}
+
+#reply_form input:after
+{
+  clear: left;
+}
+
+#reply_form label.breakLine
+{
+  float: none;
+}
+
+#reply_form textarea
+{
+  width: 600px;
+  margin-left: 0px;
+  margin-top: 7.5px;
+  height: 200px;
+  overflow-y: scroll;
+  resize: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#reply_form textarea:focus
+{
+  border: 1px solid green;
+  outline: none;
+}
+

@@ -1,0 +1,19 @@
+.social-wrap
+ = link_to user_omniauth_authorize_path(:facebook) do
+  %button.facebook{action: "#"}  
+   Sign in
+   %em
+    w/
+   Facebook
+ = link_to user_omniauth_authorize_path(:twitter) do   
+  %button.twitter{action: "#"}
+   Sign in
+   %em
+    w/
+   Twitter
+ -# = link_to user_omniauth_authorize_path(:google_oauth2) do   
+  -# %button.googleplus{action: "#"}
+   -# Sign in
+   -# %em
+    -# w/
+   -# Google

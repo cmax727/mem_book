@@ -1,0 +1,91 @@
+header#bar_header
+{
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+//  background-color: #dfdfdf;
+//  height: 40px;
+}
+
+header#bar_header > a > h1
+{
+  padding-top: 1px;
+  margin-left: 200px;
+  font-size: 22px;
+  margin-top: 10px;
+  display: inline-block;
+  color: #4EA632;
+  font-family: $headingFont;
+}
+
+header#bar_header > a > h1 > em
+{
+  font-style: normal;
+  color: #5395DB;
+  font-family: $headingFont;
+}
+
+header#bar_header > div > a
+{
+  color: #222;
+  font-family: $headingFont;
+  font-weight: 400;
+  margin-top: 1px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+header#bar_header > div
+{
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+  margin-right: 250px;
+  padding-top: 13px;
+  color: #222;
+}
+
+#wrapper > .inwards > header
+{
+  padding-top: 43px;
+}
+
+#wrapper > .inwards > header hgroup
+{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#wrapper > .inwards > header hgroup h1
+{
+  margin: 0 0 .42em;
+  color: #04bfbf;
+  font: 600 54px/54px $sansFont;
+}
+
+#wrapper > .inwards > header hgroup h1 em
+{
+  color: #85db18;
+  font-style: normal;
+}
+
+#wrapper > .inwards > header hgroup h2
+{
+  color: #666;
+  text-align: left;
+}
+
+#wrapper > .inwards > header hgroup h2 img{
+  width: 315px;
+  margin-bottom: 20px;
+}
+
+
+#wrapper > .inwards > header hgroup h3
+{
+  width: 77%;
+  margin: 0px auto;
+  color: #666; font: 300 28px/normal $headingFont;
+}

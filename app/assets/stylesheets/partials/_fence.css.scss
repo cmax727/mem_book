@@ -1,0 +1,32 @@
+.fence
+{
+  float: left;
+  width: 100%;
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+
+.fence > li
+{
+  display: inline;
+  float: left;
+  padding: 0 6px;
+  border-left: solid 1px;
+  line-height: 1.1em;
+}
+
+.fence > li:first-child
+{
+  padding-left: 0;
+  border-left: none;
+}
+
+.fence > li:last-child
+{
+  padding-right: 0;
+}
+
+.fence + *
+{
+  clear: both;
+}

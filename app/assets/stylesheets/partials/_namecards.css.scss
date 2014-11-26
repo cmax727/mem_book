@@ -1,0 +1,28 @@
+
+
+.namecards{
+	padding-right: 0px;
+	overflow-x: hidden;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+.namecards ul{
+	padding: 0px;
+    overflow: visible;
+}
+
+.namecards strong{
+	cursor: pointer;
+}
+
+.namecards strong:before{
+	padding-left: 20px;
+	background: image-url("map_icon.png");
+	display: inline-block;
+	background-size: 11px 15px;
+	background-position: left center;
+
+}

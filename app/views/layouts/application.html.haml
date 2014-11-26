@@ -1,0 +1,57 @@
+!!!
+
+%html{lang: :en}
+  %head
+    %title= yield(:page_title)
+    %meta{charset: :"utf-8"}
+    %meta{name: :viewport, content: :"width=960"}
+
+    = stylesheet_link_tag :styles,  media: :all
+    = stylesheet_link_tag :print,   media: :print
+    = stylesheet_link_tag 'jquery_ui/jquery-ui-1.10.3.custom',   media: :all
+
+    = yield(:stylesheets)
+    
+    -# = javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'
+    -# :javascript
+      -# !window.jQuery && document.write('<script src=#{javascript_path('libs/jquery-1.9.0.min.js').inspect}><\/script>');
+    -# = javascript_include_tag :jqueryui
+
+
+    = javascript_include_tag :all
+    = yield(:javascripts)
+    
+    = csrf_meta_tag
+
+    = render partial: 'shared/favicons'
+
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv"
+  %body
+
+    #wrapper
+
+      = render partial: 'shared/application_header'
+      = render partial: 'shared/flash'
+      = yield
+
+      %footer.outwards
+        .inwards
+
+          %ul
+            %li= link_to "Facebook", "#", class: "facebook"
+            %li= link_to "Twitter", "#", class: "twitter"
+
+          %nav
+            %ul.sitemap
+              %li= link_to "About Us", about_us_path
+              %li= link_to "Privacy Policy", privacy_policy_path
+              %li= link_to "Terms", terms_path
+              %li= link_to "Advertisers", advertisers_path
+              %li= link_to "Contact Us", contact_us_path
+              %li= link_to "Help", help_path
+
+          %small &copy; Copyright 2012 AroundYoga. All rights reserved.
+
+
+    

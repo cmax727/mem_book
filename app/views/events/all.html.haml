@@ -1,0 +1,23 @@
+- content_for(:page_title) { 'Events' }
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup2
+
+  %hgroup
+    %h1 Events
+    %h2 Find events around you and around the world
+    = link_to new_event_path do
+      = render partial: 'create'
+ 
+  .col
+    .book
+
+      %nav
+        %ul.tabs
+          %li.on= link_to 'All events', all_events_path
+          %li= link_to 'Near me', near_city_events_path
+
+      = render partial: 'event_detail', locals: {events: @events}
+
+  %aside
+    = render partial: 'search'
+    = render partial: 'shared/event_ads'

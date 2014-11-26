@@ -1,0 +1,12 @@
+- titles "Resend confirmation instructions"
+
+= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+  .group.wat-cf
+    = f.label :email
+    = f.text_field :email
+    -# = f.description "Please enter your email address."
+  .group.navform.wat-cf
+    .right
+      -# = f.secure "Resend confirmation instructions"
+
+= render :partial => "shared/devise_links"

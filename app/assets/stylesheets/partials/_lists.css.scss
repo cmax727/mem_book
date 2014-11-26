@@ -1,0 +1,410 @@
+/* Lists A through H */
+
+.listA > li
+{
+  min-height: 1px;
+  margin-bottom: 29px;
+  padding: 29px 21px 12px;
+  border: solid 1px #d0d7d7;
+}
+
+.listA > li > img:first-child
+{
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.listB > li
+{
+  min-height: 1px;
+}
+
+.listB > li > a
+{
+  display: block;
+  margin-bottom: .5em;
+}
+
+.listB > li > time
+{
+  padding: 3px 0 3px 30px;
+  background: image-url('icon1_calendar.png') 0 50% no-repeat;
+}
+
+.listC > li
+{
+  clear: both;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  margin-top: 16px;
+  padding: 16px 0 0;
+  border-top: solid 1px #d3d3d3;
+}
+
+.listC > li:first-child
+{
+  margin-top: 0;
+  padding-top: 8px;
+  border-top: none;
+}
+
+.box .listC > li:first-child
+{
+  padding-top: 0;
+}
+
+.listC > li > .inner
+{
+  position: relative;
+  min-height: 97px;
+  padding: 12px 0 0 103px;
+  behavior: url('/components/PIE.htc');
+}
+
+.listC > li:hover > .inner {
+  margin: 0 -9px;
+  padding: 12px 9px 0 112px;
+  background-color: #dfdfdf;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  behavior: url('/components/PIE.htc');
+}
+
+.listC > li:first-child {
+  border-top: none; }
+
+.listC > li > .inner > time:first-child
+{
+  float: left;
+  width: 86px;
+  margin: 0 0 0 -107px;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.listC > li > .inner > .meter
+{
+  float: right;
+  padding: 5px 16px;
+  border: solid 1px #d5d5d5;
+  background-color: #fff;
+  font-weight: bold;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.listC > li > .inner p
+{
+  margin: .5em 0 0;
+}
+
+.listD.listC > li > .inner
+{
+  padding-left: 0;
+}
+
+.listD.listC > li:hover > .inner
+{
+  padding-left: 9px;
+}
+
+.listD > li aside
+{
+  float: left;
+  width: 14.2%;
+  margin: 0;
+  line-height: 20px;
+}
+
+.listD > li aside > img:first-child
+{
+  margin: 3px 0 8px;
+}
+
+.listD > li aside > img:first-child + *
+{
+  font-weight: bold;
+}
+
+.listD > li aside > time
+{
+  font-style: italic;
+}
+
+.listD > li section
+{
+  float: right;
+  width: 84%;
+}
+
+.listD > li section footer menu
+{
+  float: left;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.listD > li section footer menu > li
+{
+  display: inline;
+  float: left;
+  margin-left: 15px;
+}
+
+.listD > li section footer menu > li:first-child
+{
+  margin-left: 0;
+}
+
+.listD > li section footer .meta
+{
+  float: right;
+  margin-top: 3px;
+  color: $gray;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.listD > li section footer .meta a,
+.listD > li section footer .meta a:link,
+.listD > li section footer .meta a:visited
+{
+  color: $gray;
+}
+
+.listE
+{
+  overflow: hidden;
+  margin: 0 -10px;
+  min-height: 1px;
+}
+
+.listE > li
+{
+  display: inline;
+  float: left;
+  width: 273px;
+  min-height: 81px;
+  padding: 12px 0;
+  margin: 0 10px;
+  behavior: url('/components/PIE.htc');
+}
+
+.listE > li:hover
+{
+  padding: 12px;
+  margin: 0 -2px;
+  background-color: #f2f2f2;
+  behavior: url('/components/PIE.htc');
+}
+
+.listE > li > img
+{
+  float: left;
+  margin-right: 15px;
+}
+
+.listE > li > h2
+{
+  margin: 0;
+}
+
+.listE > li > h2 + *
+{
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.listF > li
+{
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+.listF > li > img:first-child, .listF > li > a:first-child img {
+  float: left;
+  margin-right: 13px;
+}
+
+.listF > li > h5
+{
+  margin: 3px 0;
+  font-weight: normal;
+}
+
+.listG.listC > li > .inner
+{
+  padding-left: 0;
+}
+
+.listG.listC > li:hover > .inner
+{
+  padding-left: 9px;
+}
+
+.listG.listC > li > .inner > aside
+{
+  float: left;
+  width: 15%;
+}
+
+.listG.listC > li > .inner > aside + .content
+{
+  float: right;
+  width: 84%;
+}
+
+.listG.listC > li > .inner > aside + .content h2
+{
+  margin: 0;
+  padding-bottom: .5em;
+}
+
+.listG.listC > li > .inner > aside + .content .fence
+{
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.listG.listC > li > .inner > aside + .content p
+{
+  margin: 0;
+  padding: 0;
+}
+
+.listH > li
+{
+  clear: both;
+  min-height: 1px;
+  margin-left: 76px;
+  border-top: solid 1px #d3d3d3;
+  margin-top: 27px;
+  padding: 28px 0 1px;
+}
+
+.listH > li:first-child
+{
+  margin-top: 0;
+  padding-top: 14px;
+  border-top: none;
+}
+
+.listH > li > aside:first-child
+{
+  position: relative;
+  float: left;
+  width: 54px;
+  margin-left: -76px;
+  text-align: center;
+}
+
+.listH > li > aside:first-child > img
+{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.listH > li > aside:first-child > time
+{
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.listH > li p
+{
+  margin: .5em 0 0;
+}
+
+.events_list
+{
+  list-style-type: none;
+}
+
+.events_list > li
+{
+  float: left;
+  width: auto;
+  padding: 6px 10px;
+  border: 1px solid #cdc;
+  margin-right: 4px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.events_list > li:hover
+{
+  border-color: $lightgray;
+}
+
+.bullet_list
+{
+  list-style-type: square !important;
+}
+
+span.attending > a > span
+{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+span.attending > a
+{
+  text-decoration: none;
+}
+
+span.attending > a > span
+{
+  color: $primary;
+  text-decoration: underline;
+}
+
+article.latestNews{
+
+}
+
+article.latestNews ul{
+  background: none;
+  list-style-type: none;
+  width: 100%;
+  padding: 0px;
+}
+
+article.latestNews ul li{
+  clear: right;
+  background: none;
+  padding: 8px 6px;
+  border-top: 1px solid $offwhite;
+}
+
+article.latestNews ul li:last-child{
+  border-bottom: 1px solid $offwhite;
+}
+
+article.latestNews ul li a{
+
+}
+
+article.latestNews ul li span.date{
+  font-weight: bold;
+  float: right;
+}
+
+
+ul.subCat{
+  padding-left: 25px !important;
+  padding-bottom: 15px !important;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+ul.subCat > li.on > a{
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+

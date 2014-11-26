@@ -1,0 +1,21 @@
+%section
+  .box.boxB
+    %h3 Groups I Member
+    %ul.listC.listG
+      - member_groups.each do |group|
+        = render :partial => 'group_detail', :locals => {:group => group}
+
+        
+  .box.boxB
+    %h3 Groups I Moderate
+    %ul.listC.listG
+      - moderator_groups.each do |group|
+        = render partial: 'group_detail', :locals => {:group => group}
+
+  .box.boxB
+    %h3 Groups I Own
+    %ul.listC.listG
+      - owner_groups.each do |group|
+        = render partial: 'group_detail', :locals => {:group => group}
+
+

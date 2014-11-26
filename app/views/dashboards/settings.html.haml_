@@ -1,0 +1,36 @@
+- content_for(:navigation_item) { 'Home' }
+#main.inwards.colgroup.colgroup1
+ %hgroup.leftFix
+  %h1
+   Account Settings
+ #form_wrap
+  = form_for @user, :html => { :class => "form_default", :id => "form" }, :url => update_settings_path do |f|
+   = f.label :email
+   = f.text_field :email
+   %fieldset
+    %label{for: "radio1"} Lorem ipsum dolor
+    %input#radio1{type: "radio", name: "group1", value: "On"}
+     On
+    %input{type: "radio", name: "group1", value: "Off"}
+     Off
+   %fieldset
+    %label{for: "radio1"} Lorem ipsum dolor
+    %input#radio1{type: "radio", name: "group1", value: "On"}
+     On
+    %input{type: "radio", name: "group1", value: "Off"}
+     Off
+   %fieldset
+    %label{for: "radio1"} Lorem ipsum dolor
+    %input#radio1{type: "radio", name: "group1", value: "On"}
+     On
+    %input{type: "radio", name: "group1", value: "Off"}
+     Off
+   .social-wrap
+    %button.facebook{action: "#"}
+     Connect to Facebook
+    %button.twitter{action: "#"}
+     Connect to Twitter
+    %button.googleplus{action: "#"}
+     Connect to Google
+   = f.submit "Save", :class => "primaryButton block" 
+    

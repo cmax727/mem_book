@@ -1,0 +1,33 @@
+- content_for(:navigation_item) { 'Groups' }
+#main.inwards.colgroup.colgroup2
+ .col
+  %section.colgroup.profile.profileB
+   = render :partial => "inner_header", :locals => {page_name: "discussion", group: @group, joined_state: @joined_state, users: @users}
+   %section
+    %ul.listC.listD
+     - case @render_type 
+     - when 'latest_discussions'
+      - @latest_discussions.each do |discussion|
+       = render :partial => "discussions/discussion_detail", :locals => {:discussion => discussion, :group => @group} 
+     - when 'latest_activities'
+      - @latest_activities.each do |discussion|
+       = render :partial => "discussions/discussion_detail", :locals => {:discussion => discussion, :group => @group} 
+   
+ %aside
+  = render :partial => 'aside_group_council', :locals => {:owners => @owners, :leaders => @leaders} 
+
+
+  = render :partial => "shared/share", :locals => {:page_name => "Group"}
+  = render partial: 'shared/event_ads'
+  = render :partial => "shared/report", :locals => {:page_name => "Group"}
+
+#modal_window
+ %span#close x
+ %h1 Start Discussion  
+ = form_for [@group, @discussion], :html => { :id => "new_message_form" } do |disc| 
+  %label{:for => "title"} Title:
+  = disc.text_field :title
+  %label{:for => "description"} Description:
+  = disc.text_area :description    
+  = disc.submit "Submit"
+    

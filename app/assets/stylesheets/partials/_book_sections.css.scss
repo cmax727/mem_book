@@ -1,0 +1,281 @@
+/* Book sections */
+.book
+{
+  clear: both;
+  min-height: 1px;
+}
+
+.book > .blanket
+{
+  margin: 0;
+  padding: 0px;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+  behavior: url('/components/PIE.htc');
+}
+
+.book > form.mini label.placeholder
+{
+  display: none;
+  top: 37px;
+  left: 38px;
+}
+
+.book > form.mini input
+{
+  position: relative;
+  border-color: $lightgray;
+}
+
+.book > form.mini input.text
+{
+  float: left;
+  margin-right: 1px;
+  margin-left: 0px;
+}
+
+.colgroup2 > div.col .book > form.mini input.text
+{
+  width: 60%;
+  margin-bottom: 25px;
+}
+
+.book > nav
+{
+  float: left;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.book > nav > *
+{
+  float: left;
+  width: 100%;
+  padding: 13px 0;
+  margin: 0;
+}
+
+.book > nav > *:first-child {
+  clear: both;
+  position: relative;
+  background: #e0e0e0;
+}
+
+.book > nav li
+{
+  display: inline;
+  float: left;
+  padding: 0 6px;
+}
+
+.book > nav li > a
+{
+  float: right;
+  padding: 0;
+  color: blue;
+}
+
+.book > nav li.on > a{
+  color: black;
+  text-decoration: none;
+}
+
+.book > nav > menu:first-child li.on > a
+{
+  position: relative;
+  text-decoration: none;
+  color: black;
+  float: left;
+  margin-bottom: -19px;
+  padding-bottom: 19px;
+}
+
+.book > nav > *:first-child li
+{
+  line-height: 1.1em;
+}
+
+.book > nav li:first-child
+{
+  margin-left: 20px;
+  padding-left: 0;
+  border-left: none;
+}
+
+.book > nav > * > li:last-child
+{
+  padding-right: 0;
+}
+
+.book > nav > *:first-child > li > a,
+.book > nav > *:first-child > li > a:link,
+.book > nav > *:first-child > li > a:visited
+{
+  color: $darkgray;
+  text-decoration: underline;
+}
+
+.book > nav > *:first-child > li.on > a,
+.book > nav > *:first-child > li > a:hover
+{
+  text-decoration: none;
+}
+
+.book > section
+{
+  clear: both;
+}
+
+.book > section > *
+{
+  margin-bottom: 1.75em;
+}
+
+.book > nav > *:first-child + ul
+{
+  margin-top: 6px;
+}
+
+.book > nav > *:first-child + ul > li > a
+{
+}
+
+.book > nav > *:first-child + ul > li > a,
+.book > nav > ul:first-child + ul > li > a:link,
+.book > nav > ul:first-child + ul > li > a:visited
+{
+}
+
+.book > nav > *:first-child + ul > li.on > a
+{
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.book > nav > ul.tabs > li
+{
+  padding: 0 19px;
+  line-height: 17px;
+}
+
+.book > nav > ul.tabs > li:first-child
+{
+  padding-left: 0;
+}
+
+.book > nav > ul.tabs > li > a {
+  behavior: url('/components/PIE.htc');
+}
+
+.book > nav > ul.tabs > li.on > a
+{
+  margin: -13px -21px -11px;
+  padding: 14px 12px;
+  border-bottom: none;
+  background: #cdcdcd;
+  font-size: 13px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-topright: 7px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  behavior: url('/components/PIE.htc');
+}
+
+.book > nav > ul.tabs > li.on > a,
+.book > nav > ul.tabs > li.on > a:link,
+.book > nav > ul.tabs > li.on > a:visited
+{
+  color: #000;
+}
+
+.book > nav > ul.tabs > li.odd
+{
+  border: none;
+  float: right;
+  display: block;
+  padding-top: 15px;
+  font-size: 12px;
+  position: relative;
+  top: 8px;
+}
+
+.book > nav > ul.tabs > li.odd.switch a
+{
+  text-decoration: underline;
+}
+
+.book > nav > ul.tabs > li.odd.switch > a:first-child
+{
+  margin-left: 20px;
+}
+
+.book > nav > ul.tabs > li.odd.switch > a.on
+{
+  text-decoration: none;
+}
+
+.book > nav > ul.tabs > li.odd li
+{
+  border-color: #000;
+}
+
+.book > nav > ul.tabs > li.odd a,
+.book > nav > ul.tabs > li.odd a:link,
+.book > nav > ul.tabs > li.odd a:visited
+{
+  color: #000;
+}
+
+.book > nav > ul.tabs > li.odd li > a,
+.book > nav > ul.tabs > li.odd li > a:link,
+.book > nav > ul.tabs > li.odd li > a:visited
+{
+  text-decoration: underline;
+}
+
+.book > nav > ul.tabs > li.odd li > a:hover
+{
+  text-decoration: none;
+}
+
+.book > nav > ul.tabs > li.odd li.on > a
+{
+  background: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.book > nav > ul.tabs > li.popup-holder li
+{
+  border: none;
+}
+
+.book > nav > ul.tabs > li.popup-holder ul
+{
+  width: 150px;
+}
+
+.book > nav > ul.locations
+{
+  padding-top: 10px;
+  padding-left: 25px;
+  width: 600px;
+  border-bottom: 1px solid #cdcdcd;
+  background-color: #fff;
+}
+
+.book > nav > ul.locations > li{
+  padding-top: 0px;
+  margin-right: 15px;
+}
+
+.book > nav > ul.locations > li > a.on
+{
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}

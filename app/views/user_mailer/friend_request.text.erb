@@ -1,0 +1,10 @@
+Hello <%= @friend.name %>,
+You have a new AroundYoga friend request from <%= @user.name %>.
+
+View <%= @user.name %>'s profile:
+<%= user_profile_url(@user, :only_path => false) %>
+Accept: 
+<%= user_friend_requests_url(@friend, :only_path => false) %>
+Decline: 
+
+--The AroundYoga team

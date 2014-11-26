@@ -1,0 +1,48 @@
+- content_for(:page_title) { 'Event' }
+- content_for(:navigation_item) { 'Events' }
+#main.inwards.colgroup.colgroup2
+ .col.profile.profileA
+  %header
+   %time.cal{datetime: "2012-04-26"}
+    %span= @event.started_at.strftime("%b")
+    %span= @event.started_at.day
+    
+   %h1= @event.name
+   %time= @event.started_at.strftime("%A %d %B, %I%P") + " - " + @event.ended_at.strftime("%A %d %B,%I%P")
+
+   %span= @event.cost
+  %section
+   %h3
+    Location
+   %article
+    %p= @event.address
+   %h3
+    Contact
+   %ul
+    %li
+     %span= @event.contact
+  %section
+   %h3
+    Description
+   %article
+    %p= @event.description
+    - if @attend_state
+     = link_to "I'm going", attend_event_path(@event), :method => :post, class: "btn btnB"
+    - else
+     = link_to "I'm not going", not_attend_event_path(@event), :method => :post, class: "btn btnB",
+                                :style => "background: none; background: green; border: none;" 
+    
+
+ %aside
+  .box.boxB
+   = image_tag(@owner.avatar.url, width: 81, height: 81, alt: :avatar)
+   .desc
+    %span.label
+     Event created by
+    %h2
+     =link_to @owner.name, user_profile_path(@owner)
+    %address= @owner.profile.place
+    
+  -# = render :partial => "shared/share", :locals => {:page_name => "Event", :facebook => @facebook, :twitter => @twitter}
+  = render :partial => "shared/share", :locals => {:page_name => "Event"}
+  = render partial: 'shared/event_ads'

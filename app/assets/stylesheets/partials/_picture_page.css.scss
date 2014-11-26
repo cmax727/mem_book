@@ -1,0 +1,215 @@
+ul.pictures
+{
+ width: 100%;
+}
+
+ul.pictures li
+{
+  float: left;
+  margin-right: 45px;
+  margin-bottom: 15px;
+  height: 225px;
+  width: 130px;
+}
+
+ul.pictures > li img
+{
+  height: 122px;
+  width: 122px;
+  border: 4px solid #dfdfdf;
+}
+
+ul.pictures li span{
+  display: block;
+}
+
+ul.pictures li span.caption{
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+div.picOverlay
+{
+  width: 90px;
+  height: 90px;
+  padding: 1px;
+  font-size: 16px;
+  background-color: rgba(0,0,0, .4);
+  color: white;
+  position: fixed;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+ul.albums > li > img
+{
+  height: 120px;
+  width: 120px;
+}
+
+ul.albums > li > div.albumOverlay
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  box-sizing: border-box;
+  height: 120px;
+  width: 120px;
+  background-color: rgba(0,0,0,.7);
+  padding: 5px;
+  color: white;
+  font-size: 16px;
+}
+
+ul.albums > li
+{
+  float: left;
+  position: relative;
+  margin-right: 15px;
+}
+
+
+div.picture_wrap{
+  width: 728px;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 15px;
+}
+
+div.picture_wrap img{
+  width: 100%;
+  max-width: 720px;
+  border: 5px solid #e0e0e0;
+  margin: 0px auto;
+  }
+
+  div.picture_wrap div.overlay{
+  width: 100%;
+  height: 100%;
+
+  }
+
+  ul.picInfo li{
+
+  }
+
+  ul.picInfo li.like{
+  padding-left: 22px;
+  background-image: image-url("heart.png");
+  background-size: 15px 15px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  p {color: #707174;}
+  }
+  li.report{
+  padding-left: 22px;
+  margin-left: 55px;
+  background-image: image-url("warning-icon-md-yellow.png");
+  background-size: 15px 15px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+  }
+
+  li.block{
+  padding-left: 22px;
+  margin-left: 55px;
+  background-image: image-url("block.png");
+  background-size: 15px 15px;
+  background-position: left center;
+  background-repeat: no-repeat;
+
+  }
+
+
+  h2.spaceFix{
+
+  margin-top: 13px !important;
+  }
+
+h1.lowerHeadline{
+    color: $primary;
+    font-family: $headingFont;
+    font-weight: 100;
+    font-size: 32px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.picture_wrap{
+  width: 680px;
+  background: #cdcdcd;
+  position: relative;
+}
+
+.picture_wrap > img#imgTarget{
+  width: 680px;
+  margin: 0px auto;
+  border: 4px solid #cdcdcd;
+}
+
+.picture_wrap > .picture_overlay img{
+  height: 35px;
+  width: 35px;
+  border: none;
+  position: absolute;
+  margin-top: 190px;
+  opacity: .2;
+  cursor: pointer;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.picture_wrap > .picture_overlay:hover img{
+  opacity: 1;
+}
+
+.picture_wrap > .picture_overlay img:first-child{
+  left: -15px;
+}
+
+.picture_wrap > .picture_overlay img:last-child{
+  left: 710px;
+}
+
+.picture_wrap > .picture_overlay{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+form#uploadHolder{
+  margin-top: 15px;
+}
+
+form#uploadHolder > input{
+  padding: 10px;
+
+}
+
+form#uploadHolder > input:active{
+  outline: none;
+  border: none;
+}
+
+form#uploadHolder > button{
+  padding: 10px;
+}
+
+a#pictures-back{
+    display: block;
+    margin-top: 10px;
+    padding-left: 20px;
+    background-image: image-url("arrow-prev.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}

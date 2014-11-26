@@ -1,0 +1,24 @@
+%li
+ .inner
+  %aside
+   = image_tag discussion.user.avatar.url, width: 80, height: 80, alt: "Avatar"
+   %span
+    By
+    = link_to discussion.user.name, user_profile_path(discussion.user)
+   %time= distance_of_time_in_words_to_now(discussion.created_at).to_s + ' ago '
+  %section
+   %h2
+    = link_to discussion.title, group_discussion_path(group, discussion)
+   %p= discussion.description
+   %footer
+    %menu
+     %li.follow
+      = link_to "Follow", "#"
+     %li.comment
+      = link_to "Comment(#{discussion.comments.size})", group_discussion_path(group, discussion)
+    %span.meta     
+     - unless discussion.comments.last.nil?
+      Last post by
+      = link_to discussion.comments.last.user.name, user_profile_path(discussion.comments.last.user) 
+      at
+      %time= discussion.comments.last.created_at.to_time.strftime('%I:%P')

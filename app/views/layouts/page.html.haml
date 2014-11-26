@@ -1,0 +1,51 @@
+!!!
+
+%html{lang: :en}
+  %head
+    %title= yield(:page_title)
+    %meta{charset: :"utf-8"}
+    %meta{name: :viewport, content: :"width=960"}
+
+    = stylesheet_link_tag :landing_styles, media: :all
+    = stylesheet_link_tag :styles,  media: :all
+    = stylesheet_link_tag :print,   media: :print
+    = yield(:stylesheets)
+
+    
+    = javascript_include_tag :all
+    = yield(:javascripts)
+        
+    = csrf_meta_tag
+    = render partial: 'shared/favicons'
+
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv"
+  %body
+
+    %header#bar_header
+      = render partial: 'shared/user_header'
+
+    #wrapper
+      = render partial: 'shared/flash'
+      .inwards
+        = yield
+
+      #footwrap
+        %footer.outwards
+          .inwards
+            %ul
+              %li= link_to "Facebook", "#", class: "facebook"
+              %li= link_to "Twitter", "#", class: "twitter"
+
+            %nav
+              %ul.sitemap
+                %li= link_to "About Us", about_us_path
+                %li= link_to "Privacy Policy", privacy_policy_path
+                %li= link_to "Terms", terms_path
+                %li= link_to "Advertisers", advertisers_path
+                %li= link_to "Contact Us", contact_us_path
+                %li= link_to "Help", help_path
+
+            %small &copy; Copyright 2012 AroundYoga. All rights reserved.
+
+   

@@ -1,0 +1,40 @@
+#main.colgroup.colgroup1
+  #form_wrap
+    %h1 We just need a little more information..
+    = form_for @user, :html=> {:id => 'splash_form', :class => 'form_default'}, :method => "post", :url => create_user_path do |f|
+      = hidden_field_tag 'provider_id', @provider_id
+      = hidden_field_tag 'uid', @uid
+      = hidden_field_tag 'name', @name
+      = hidden_field_tag 'url', @url
+      = hidden_field_tag 'pic_url', @pic_url
+      = hidden_field_tag 'access_token', @access_token
+      = f.label :name 
+      %label.placeholder{for: :name} @user.name
+      = f.text_field :name 
+      = f.label :email 
+      %label.placeholder{for: :email} @user.email
+      = f.text_field :email
+      = f.label :password 
+      = f.password_field :password 
+
+      %span.formerror= flash[:country_error]  
+      %label{:for => "country", :class => "country"} Country
+      = select_tag "country", options_from_collection_for_select(@countries, "country_pk", "name"), :id => "signup_country"
+
+      
+      %label{:for => "region", :class => "region social"} Region
+      = select_tag "region",  options_from_collection_for_select(@regions, "region_pk", "name"), :id => "signup_region"
+
+       
+      %label{:for => "city", :class => "city social"} City
+      = select_tag "city",    options_from_collection_for_select(@cities, "city_pk", "name"), :id => "signup_city"
+          
+      = succeed "I" do
+        = check_box_tag(:signup_agree)
+      agree to the
+      %a{:href => ""} terms and conditions
+      and
+      %a{:href => ""} privacy policy
+      of AroundYoga
+      = f.submit "Submit Query", class: "button submit big", :disabled => false
+      

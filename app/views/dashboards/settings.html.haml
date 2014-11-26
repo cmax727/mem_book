@@ -1,0 +1,52 @@
+- content_for(:navigation_item) { 'Home' }
+#main.inwards.colgroup.colgroup1
+ %hgroup.leftFix
+  %h1
+   Account Settings
+ #form_wrap
+  = form_tag('/update_settings', :class => "form_default") do
+   = label_tag(:email, "Email:")
+   = email_field_tag :email, @user.email
+   %fieldset
+    %label{for: "radio1"} Lorem ipsum dolor
+    %input#radio1{type: "radio", name: "group1", value: "On"}
+     On
+    %input{type: "radio", name: "group1", value: "Off"}
+     Off
+   %fieldset
+    %label{for: "radio1"} Lorem ipsum dolor
+    %input#radio1{type: "radio", name: "group1", value: "On"}
+     On
+    %input{type: "radio", name: "group1", value: "Off"}
+     Off
+   %fieldset
+    %label{for: "radio1"} Lorem ipsum dolor
+    %input#radio1{type: "radio", name: "group1", value: "On"}
+     On
+    %input{type: "radio", name: "group1", value: "Off"}
+     Off
+   .social-wrap
+    - if @facebook 
+     Facebook: 
+     = link_to @facebook.name, @facebook.url
+     = link_to "Disconnect", authorization_path(@facebook), :method => "delete"
+    - else
+     = button_tag "Connect to Facebook", :type => 'button',  :class => "facebook"    
+    %br/ 
+    
+    - if @twitter 
+     Twitter: 
+     = link_to @twitter.name, @twitter.url
+     = link_to "Disconnect", authorization_path(@twitter), :method => "delete"
+    - else
+     = button_tag "Connect to Twitter", :type => 'button',  :class => "twitter"
+    %br/
+      
+    - if @google
+     Google:  
+     = link_to @google.name, @google.url
+     = link_to "Disconnect", authorization_path(@google), :method => "delete"
+    - else
+     = button_tag "Connect to Google", :type => 'button',  :class => "googleplus"
+
+   = button_tag "Save", :type => 'submit',  :class => "primaryButton block"

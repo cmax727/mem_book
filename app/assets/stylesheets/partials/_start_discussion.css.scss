@@ -1,0 +1,53 @@
+/*Group Creation Form Specifics*/
+#start_discussion {
+  width: 500px;
+  margin: 0px auto 0px auto; }
+
+#start_discussion > label, #start_discussion > aside.interest > label {
+  width: 200px;
+  float: left; }
+
+#start_discussion > textarea, select, input {
+  display: block;
+  clear: right;
+  margin: 7.5px;
+  width: 200px;
+  border: 1px solid #999;
+  padding: 6px;
+  border-radius: 4px; }
+
+
+#start_discussion > aside.interest{
+  margin-top: 25px;
+}
+
+#start_discussion > aside > img{
+  display: block;
+  margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 5px solid #eee;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+
+#start_discussion > aside > span{
+  text-decoration: underline;
+  display: block;
+  cursor: pointer;
+}
+
+#start_discussion > aside.photo{
+  width: 150px;
+  float: left;
+}
+
+#start_discussion > input[type=submit]{
+  margin: 0px auto;
+  margin-top: 45px;
+
+}
+
+#start_discussion > #email-notification{
+  width: 200px;
+}

@@ -1,0 +1,92 @@
+- content_for(:navigation_item) { 'Home' }
+- content_for(:page_title) {"A Day at the Beach | Seshank Vemuri"}
+#main.inwards.colgroup.colgroup1
+ .col
+  %hgroup
+   %h1.lowerHeadline
+    Pictures of
+    = link_to @user.name, user_profile_path(@user)
+   = link_to "Back to #{@user.name}'s Pictures", user_pictures_path(@user), id: "pictures-back"
+
+  .picture_wrap
+   = image_tag @picture.avatar1.url
+
+  %section.discussion
+   %div
+    %span#edit_photo_caption
+     = @picture.caption
+     - if @user == current_user
+      |
+      = link_to "edit caption", "#", :id => "caption_edit"
+    
+
+  
+  %ul.comments
+   %div
+    Comments    
+    %span#comment-count 
+     = @comments_count.to_s 
+   %div.comment-wrap  
+    - unless @comments.empty?    
+     - @comments.each do |comment|
+      - unless comment.body.nil? 
+       = render :partial => 'comments/comment', :locals => {:comment => comment, :editable_state => @editable_state}   
+   - unless @user == current_user      
+    .comment-form-wrap
+     %h3
+      Post a new comment
+     = form_for [@user, @picture, Comment.new], :remote => true, :html => {:class => "add-comment"} do |comment_f|
+      = hidden_field_tag 'comment_type', 'picture'
+      = comment_f.text_area :body
+      = comment_f.submit "Add Comment", :class => "default_button"
+
+ %aside
+  .prev-next 
+   %h1.prev 
+    - if @picture.prev(@user).nil?
+     << Prev
+    - else  
+     = link_to "<< Prev",  user_picture_path(@user, @picture.prev(@user))
+   %h1.next
+    - if @picture.next(@user).nil?
+     Next >>
+    - else  
+     = link_to "Next >>",  user_picture_path(@user, @picture.next(@user))
+         
+
+  .box.boxB
+   %h3
+    Picture Information
+   %ul.picInfo
+    %li
+     %span#comment-count 
+      = @comments_count.to_s 
+     Comments
+    %li
+     %span#like-count  
+      = @like_count.to_s
+     Likes
+    %li
+     Posted 
+     = distance_of_time_in_words_to_now(@picture.created_at).to_s + ' ago '  
+    - if @user == current_user 
+     %li
+      = link_to "Delete Picture", user_picture_path(@user, @picture), :method => :delete  
+    - unless @user == current_user            
+     %li.like
+      - if Comment.where(:user_id => current_user.id, :picture_id => @picture.id, :like => true).empty? 
+       = link_to "Like Picture", like_user_picture_comments_path(@user, @picture), :method => :post
+      - else
+       %p Like Picture
+     
+  = render :partial => "shared/share", :locals => {:page_name => "Picture", :user => @user}
+  = render partial: 'shared/event_ads'
+  = render :partial => "shared/report", :locals => {:page_name => "Picture"}
+  
+
+#caption_dialog
+ %p.validateTips All form fields are required.
+ 
+ = form_for [@user, @picture], :method => :put do |f|
+  = f.label :caption
+  = f.text_area :caption

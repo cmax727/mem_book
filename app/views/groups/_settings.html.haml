@@ -1,0 +1,24 @@
+%section.moderation
+ %ul.options
+  %li.on
+   =link_to "Settings", settings_group_path(group)  
+ %div
+  = form_for [group, setting], :html => { :class => 'settings-update'} do |f|   
+   %div
+    %label{for: "who"}
+     Who can start a discussion?
+    %select{name: "who"}
+     %option
+      Any Member
+     %option
+      Only Council
+   %div
+    %label{for: "auto-remove"}
+     Automatically remove content flagged innapropriate by users?
+    = f.check_box :auto_removed
+   %div
+    %label{for: "number-flags"}
+     Number of flags:
+    = f.select :flag_count, [ '5', '10', '15', '20', '25' ] 
+    -# %select.numbers-select
+   = f.submit "Submit", :class => 'default_button'

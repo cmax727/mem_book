@@ -1,0 +1,32 @@
+%ul.listC.bookfix
+  - events.each do |event|
+    %li
+      .inner
+        %time
+          %span= event.started_at.strftime("%A")
+          %span.cal
+            %span= event.started_at.strftime("%b")
+            %span= event.started_at.day
+            
+        %h2= link_to event.name, event_path(event)
+        
+        %time= event.started_at.strftime("%A %d %B, %I%P") + " - " + event.ended_at.strftime("%A %d %B,%I%P")
+          
+        %address
+          %span= event.address
+          
+          %br
+          
+          %span= event.place.split(",")[0].strip + ','
+          %span= event.place.split(",")[2].strip
+          
+        - if render_type == "created"    
+          .options-wrap
+            %button.mod-options
+              Options
+            %ul.options-list.op2
+              %li= link_to "Delete Event", event_path(event), :method => :delete
+            
+- unless events.empty?
+  %hr.clear
+  = link_to 'Load More Events', "#",  class: "show_more"

@@ -1,0 +1,37 @@
+.inner
+{
+  padding: 15px 15px 1px;
+}
+
+.outwards
+{
+  width: 100%;
+  min-width: 980px;
+}
+
+.inwards
+{
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.overlay
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.overlay.legend
+{
+  top: 0;
+  left: 0;
+}
+
+.loading {
+  display: block;
+  min-height: 50px;
+  background: image-url('loading.gif') 50% 50% no-repeat;
+}

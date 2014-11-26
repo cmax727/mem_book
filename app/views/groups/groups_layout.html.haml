@@ -1,0 +1,27 @@
+- content_for(:navigation_item) { 'Groups' }
+#main.inwards.colgroup.colgroup2
+
+  %hgroup
+    %h1 Groups
+    %h2 Find people around you and around the world.
+    = render partial: 'create'
+
+  .col
+    .book
+      = render partial: 'search'
+
+      %ul.subCat
+        %li.on= link_to 'Most Popular', popular_groups_path
+        %li= link_to 'Most recent', recent_groups_path
+      
+      
+      - case @render_type
+      - when 'mine'
+        = render partial: 'mine', locals: {member_groups: @member_groups, moderator_groups: @moderator_groups, owner_groups: @owner_groups}
+      - when 'popular'
+        = render partial: 'popular', locals: {groups: @popular_groups}
+      - when 'recent'  
+        = render partial: 'recent', locals: {groups: @recent_groups}
+
+  %aside
+    = render partial: 'shared/event_ads'

@@ -1,0 +1,204 @@
+require "csv"
+
+=begin
+SPECIFIC_COUNTRIES = [
+  "AR", # Argentina
+  "AU", # Australia
+  "AT", # Austria
+  "BE", # Belgium
+  "BR", # Brazil
+  "BG", # Bulgaria
+  "CA", # Canada
+  "CL", # Chile
+  "CR", # Costa Rica
+  "HR", # Croatia
+  "CU", # Cuba
+  "CY", # Cyprus
+  "CZ", # Czech Republic
+  "DK", # Denmark
+  "EG", # Egypt
+  "EE", # Estonia
+  "FJ", # Fiji
+  "FI", # Finland
+  "FR", # France
+  "DE", # Germany
+  "GR", # Greece
+  "HT", # Haiti
+  "HK", # Hong Kong
+  "HU", # Hungary
+  "IS", # Iceland
+  "IN", # India
+  "IE", # Ireland
+  "IL", # Israel
+  "IT", # Italy
+  "LU", # Luxembourg
+  "MV", # Maldives
+  "MT", # Malta
+  "MX", # Mexico
+  "NZ", # New Zealand,
+  "NO", # Norway
+  "PL", # Poland
+  "PT", # Portugal
+  "SG", # Singapore
+  "ES", # Spain
+  "SE", # Sweden
+  "CH", # Switzerland
+  "TH", # Thailand
+  "TR", # Turkey
+  "AE", # United Arab Emirates
+  "US", # United States
+]
+=end
+=begin
+SPECIFIC_COUNTRIES = [
+  "GR", # Greece
+  "AE", # United Arab Emirates
+  "US", # United States
+]
+=end
+SPECIFIC_COUNTRIES = [
+  "US"
+]
+
+namespace :geo do
+
+  namespace :regions do
+
+    task load: :environment do
+      puts 'Loading regions ...'
+      countries = {}
+      Country.all.each do |c|
+        countries[c.alpha2] = c.id
+      end
+
+      path = ::Rails.root.join("data", "geo", "GeoWorldMap", "Regions.txt")
+
+      country_code = nil
+      country = nil
+
+      regions = []
+      CSV.foreach(path, col_sep: :",") do |tokens|
+        unless country_code == tokens[0]
+          country_code = tokens[0]
+          country = countries[tokens[0]]
+        end
+
+        regions << {country_id: country, name: tokens[2].gsub("\"", "")}
+      end
+
+      puts 'Done.'
+
+      puts 'Saving regions ...'
+      bar = ProgressBar.new(regions.size)
+      regions.each do |region|
+        unless existing = Region.where(name: region[:name], country_id: region[:country_id]).first
+          Region.new(region).save!
+          bar.increment!
+        end
+      end
+      puts 'Done.'
+    end
+  end
+
+  namespace :cities do
+
+    task clean: :environment do
+      invalid_countries_path = ::Rails.root.join("data", "geo", "invalid_countries.txt")
+      invalid_regions_path = ::Rails.root.join("data", "geo", "invalid_regions.txt")
+
+      FileUtils.rm_f(invalid_countries_path)
+      FileUtils.rm_f(invalid_regions_path)
+
+      output_folder = ::Rails.root.join("data", "geo", "cities")
+
+      Dir.foreach(output_folder) do |f|
+        File.delete(File.join(output_folder, f)) if f != '.' && f != '..' && f!= ".gitkeep"
+      end
+    end
+
+    task slice: :environment do
+      ## Add the cities from the geo data
+      path = ::Rails.root.join("data", "geo", "GeoWorldMap", "Cities.txt")
+
+      country_code = nil
+      country_file = nil
+
+      File.open(path, 'r') do |file|
+        file.each_line do |line|
+          line = line.strip
+          next if line.blank?
+
+          tokens = line.split(";")
+
+          if tokens[0] != country_code
+            country_code = tokens[0]
+            puts "Slicing #{country_code.upcase} ..."
+            if country_file
+              country_file.close
+              country_file = nil
+            end
+            country_file = File.open(::Rails.root.join("data", "geo", "cities", "#{country_code.upcase}.txt"), "a+")
+          end
+
+          country_file.puts "#{line}\n"
+        end
+
+        country_file.close if country_file
+        puts "Done."
+      end
+    end
+
+    task load: :environment do
+      ## Add the cities from the geo data
+      filter = ::Rails.root.join("data", "geo", "cities", "*.txt")
+
+      Dir.glob(filter) do |file|
+        country_code = Pathname.new(file).basename.to_s.gsub(".txt", "")
+        next if country_code == "AN"
+        country_code = "CD" if country_code == "ZR"
+
+        if SPECIFIC_COUNTRIES
+          next unless SPECIFIC_COUNTRIES.include?(country_code)
+        end
+
+        country = Country.where(alpha2: country_code).first
+        raise "Invalid country code file: #{country_code}" unless country
+
+        regions = {}
+        country.regions.each do |region|
+          regions[region.code] = { id: region.id, name: region.name }
+        end
+
+        puts "Loading city information for #{country.name} (#{country_code}) ..."
+
+        CSV.foreach(file, col_sep: ";") do |tokens|
+          region = nil
+          unless tokens[1].blank?
+            region = regions[tokens[1]]
+            next unless region
+          end
+
+          full_name = if region
+            "#{country.name}, #{region[:name]}, #{tokens[2]}"
+          else
+            "#{country.name}, #{tokens[2]}"
+          end
+
+          city = City.new(
+            country_id: country.id,
+            region_id: region ? region[:id] : nil,
+            name: tokens[2],
+            lat: tokens[3],
+            lng: tokens[4],
+            full_name: full_name
+          )
+
+          city.save!
+        end
+
+        puts "Done loading city information for #{country.name}."
+      end
+    end
+  end
+
+end

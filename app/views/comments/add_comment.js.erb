@@ -1,0 +1,6 @@
+$('.comment-wrap').append("<%= escape_javascript("#{render :partial => 'comments/comment', :locals => { :comment => @comment, :editable_state => @editable_state}}").html_safe %>");
+
+var num = $('span#comment-count').text();
+$('span#comment-count').text(parseInt(num) + 1);
+$('textarea#comment_body').val('');
+

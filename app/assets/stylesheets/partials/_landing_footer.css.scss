@@ -1,0 +1,247 @@
+#wrapper > footer
+{
+  clear: both;
+  float: left;
+  width: 100%;
+  padding: 62px 0 25px;
+  color: $darkgray;
+  background-color: #cdcdcd;
+  font-size: 17px;
+}
+
+#wrapper > footer.small{
+  padding: 9px 0 25px;
+  background-color: #dfdfdf;
+}
+
+#wrapper > footer.smallest{
+  padding: 9px 0 25px;
+  background-color: #eceaea;
+}
+
+#wrapper > footer a,
+#wrapper > footer a:link,
+#wrapper > footer a:visited
+{
+  color: #005b59;
+  text-decoration: underline;
+}
+
+#wrapper > footer a:hover
+{
+  color: #fff;
+  text-decoration: none;
+}
+
+#wrapper > footer h2
+{
+  color: $darkgray;
+  font-size: 20px;
+}
+
+#wrapper > footer > .inwards > .colgroup > blockquote
+{
+  width: 385px;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+
+#wrapper > footer > .inwards > .colgroup > blockquote + .col
+{
+  width: 280px;
+}
+
+#wrapper > footer > .inwards > nav
+{
+  margin-top: 1.5em;
+  padding-top: 1em;
+  border-top: solid 1px $lightgray;
+}
+
+#wrapper > footer > .inwards > nav > ul {
+  font-size: 15px;
+  font-family: $bodyFont;
+}
+
+#wrapper > footer > .inwards > nav > ul > li
+{
+  display: inline;
+  float: left;
+  padding: 0 12px;
+  border-left: solid 1px #fff;
+  line-height: 1.1em;
+}
+
+#wrapper > footer > .inwards > nav > ul > li:first-child
+{
+  padding-left: 0;
+  border-left: none;
+}
+
+#wrapper > footer > .inwards > nav > ul > li:last-child
+{
+  padding-right: 0;
+}
+
+#wrapper > footer > .inwards > nav > ul > li > a,
+#wrapper > footer > .inwards > nav > ul > li > a:link,
+#wrapper > footer > .inwards > nav > ul > li > a:visited
+{
+ color: $darkgray;
+ text-decoration: none;
+}
+
+#wrapper > footer > .inwards > nav > ul > li > a:hover
+{
+  text-decoration: underline;
+}
+
+#wrapper > footer > .inwards > small {
+  float: right;
+  margin-top: 2px;
+  color: $darkgray;
+  font-size: 12px;
+  font-family: $bodyFont;
+}
+
+
+#footwrap > footer {
+  float: left;
+  width: 100%;
+  padding-bottom: 65px;
+}
+
+#footwrap > footer {
+  clear: both;
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 100%;
+  min-height: 38px;
+  background: image-url('shadow2-bottom.png') 50% 0 no-repeat;
+  color: #70706f;
+  font-family: $bodyFont;
+}
+
+#footwrap > footer a,
+#footwrap > footer a:link,
+#footwrap > footer a:visited
+{
+  color: #70706f;
+}
+
+#footwrap > footer > .inwards
+{
+  padding: 27px 0 0;
+  border-top: solid 1px $lightgray;
+}
+
+#footwrap > footer > .inwards > *
+{
+  float: left;
+}
+
+#footwrap > footer > .inwards > ul
+{
+  margin-right: 16px;
+}
+
+#footwrap > footer > .inwards > ul > li
+{
+  display: inline;
+  float: left;
+  margin-left: 3px;
+}
+
+#footwrap > footer > .inwards > ul > li:first-child
+{
+  margin-left: 0;
+}
+
+#footwrap > footer > .inwards > ul > li > a
+{
+  overflow: hidden;
+  float: left;
+  width: 32px;
+  height: 0;
+  padding-top: 31px;
+
+}
+
+#footwrap > footer > .inwards > ul > li > a,
+#footwrap > footer > .inwards > ul > li > a:link,
+#footwrap > footer > .inwards > ul > li > a:visited
+{
+  text-decoration: none;
+    background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+
+}
+
+#footwrap > footer > .inwards > ul > li > a.twitter
+{
+  background-image: image-url('icon4_twitter.png');
+}
+
+#footwrap > footer > .inwards > ul > li:hover > a.twitter
+{
+  background-image: image-url('icon3_twitter.png');
+}
+
+#footwrap > footer > .inwards > ul > li > a.facebook
+{
+  background-image: image-url('icon4_facebook.png');
+}
+#footwrap > footer > .inwards > ul > li:hover > a.facebook
+{
+  background-image: image-url('icon3_facebook.png');
+}
+
+#footwrap > footer > .inwards > nav
+{
+  float: left;
+  margin-top: 8px;
+}
+
+#footwrap > footer > .inwards > nav > ul
+{
+  font-size: 15px;
+}
+
+#footwrap > footer > .inwards > nav > ul > li {
+  display: inline;
+  float: left;
+  padding: 0 12px;
+  border-left: solid 1px #70706f;
+}
+
+#footwrap > footer > .inwards > nav > ul > li:first-child
+{
+  padding-left: 0;
+  border-left: none;
+}
+
+#footwrap > footer > .inwards > nav > ul > li:last-child
+{
+  padding-right: 0;
+}
+
+#footwrap > footer > .inwards > nav > ul > li > a,
+#footwrap > footer > .inwards > nav > ul > li > a:link,
+#footwrap > footer > .inwards > nav > ul > li > a:visited
+{
+  text-decoration: none;
+}
+
+#footwrap > footer > .inwards > nav > ul > li > a:hover
+{
+ text-decoration: underline;
+}
+
+#footwrap > footer > .inwards > small {
+  display: inline;
+  float: right;
+  margin-top: 9px;
+  font-size: 12px;
+}

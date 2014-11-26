@@ -1,0 +1,80 @@
+#wrapper > aside
+{
+  clear: both;
+  float: left;
+  width: 100%;
+  padding: 68px 0;
+  background-color: #dfdfdf;
+  color: #333;
+  font-family: $bodyFont;
+  box-shadow: inset 1px 1px 2px #cdcdcd;
+}
+
+#wrapper > aside > .inwards > ul > li
+{
+  float: left;
+  width: 18.5%;
+  margin-left: 22.25%;
+  font-size: 20px;
+  text-align: center;
+  line-height: 22px;
+}
+
+#wrapper > aside > .inwards > ul > li:first-child
+{
+  margin-left: 0;
+}
+
+#wrapper > aside > .inwards > ul > li > h2 {
+  /* background: image-url('trans1.png') repeat; * OLD BACKGROUND */
+  background: $homeTilesPrimary; /* Old browsers */
+background: -moz-linear-gradient(top,  $homeTilesPrimary 0%, darken($homeTilesPrimary, 10%) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$homeTilesPrimary), color-stop(100%,darken($homeTilesPrimary, 10%))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  $homeTilesPrimary 0%,darken($homeTilesPrimary, 10%) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  $homeTilesPrimary 0%,darken($homeTilesPrimary, 10%) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  $homeTilesPrimary 0%,darken($homeTilesPrimary, 10%) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  $homeTilesPrimary 0%,darken($homeTilesPrimary, 10%) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$homeTilesPrimary', endColorstr='darken($homeTilesPrimary, 10%)',GradientType=0 ); /* IE6-9 */
+
+  font-weight: normal;
+  font-size: 29px;
+  text-align: left;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#wrapper > aside > .inwards > ul > li > h2 > a
+{
+  position: relative;
+  display: block;
+  padding: 6px 15px 8px 56px;
+  background-position: 15px 50%;
+  background-repeat: no-repeat;
+}
+
+#wrapper > aside > .inwards > ul > li > h2 > a,
+#wrapper > aside > .inwards > ul > li > h2 > a:link,
+#wrapper > aside > .inwards > ul > li > h2 > a:visited
+{
+ color: $homeTilesTextColor;
+ text-decoration: none;
+}
+
+#wrapper > aside > .inwards > ul > li.discover > h2 > a
+{
+  background-image: image-url('icon1-raindrop.png');
+}
+
+#wrapper > aside > .inwards > ul > li.groups > h2 > a
+{
+  padding-left: 61px;
+  background-image: image-url('icon1-group.png');
+  background-position: 17px 50%;
+}
+
+#wrapper > aside > .inwards > ul > li.events > h2 > a {
+  padding-left: 69px;
+  background-image: image-url('icon1-calendar.png');
+  background-position: 26px 50%;
+}

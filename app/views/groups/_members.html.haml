@@ -1,0 +1,19 @@
+%section.box.boxC.namecards.noBorder.noScroll
+ %ul.listE
+  - members.each do |member|
+   %li
+    = image_tag member.avatar.url, width: "81", height: "81", alt: "Avatar"
+    %h2
+     = link_to member.name, user_profile_path(member)
+    %strong= member.profile.place
+    - if editable_state 
+     .options-wrap
+      %button.mod-options
+       Options
+      %ul.options-list
+       %li
+        = link_to "Remove from group", group_removes_member_path(group, member), :method => :delete
+       %li
+        = link_to "Block from group", group_block_path(group, member), :method => :put
+       %li
+        = link_to "Add as group council", group_add_as_group_leader_path(group, member), :method => :put 

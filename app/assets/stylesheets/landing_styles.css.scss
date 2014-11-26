@@ -1,0 +1,27 @@
+//= require_self
+
+@import "partials/var";
+@import "partials/reset";
+@import "partials/fonts";
+@import "partials/defaults";
+@import "partials/landing_header";
+@import "partials/block_quote";
+@import "partials/flash_messages";
+@import "partials/landing_forms";
+@import "partials/clearfix";
+@import "partials/column_models";
+@import "partials/landing_layout";
+@import "partials/login_links";
+@import "partials/lower_landing_page";
+@import "partials/landing_footer";
+@import "partials/flash_messages_landing";
+@import "partials/landing_textpages";
+@import "partials/errors";
+@import "partials/splash_screen";
+
+
+/*Animation*/
+@-webkit-keyframes blink
+{
+  0% { opacity: 1; } 50% {opacity: .8; } 100% { opacity: 1; }
+}

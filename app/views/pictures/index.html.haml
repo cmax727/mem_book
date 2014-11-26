@@ -1,0 +1,30 @@
+#main.inwards.colgroup.colgroup1
+
+ .col
+  %hgroup
+
+   %h1
+    Pictures of
+    = link_to @user.name, user_profile_path(@user)
+   - if @user == current_user
+    = link_to upload_picture_user_pictures_path(@user) do
+     %button.btn.btnB.headingButton.pictureBtn.innerBtn{action: "#"}
+      Upload Picture  
+     
+    
+   %h2.spaceFix.location
+    = @user.profile.place
+
+
+  %section
+   %ul.pictures
+    - @pictures.each do |picture|
+     %li
+      = link_to image_tag(picture.avatar1.url, width: 180, height: 180, alt: :avatar), user_picture_path(@user, picture)
+      %span.caption= picture.caption
+      %span.time-info= distance_of_time_in_words_to_now(picture.created_at).to_s + ' ago ' + ' | ' + picture.created_at.to_date.to_formatted_s(:db)
+       
+    %hr.clear
+   %hr.clear
+ %aside
+  = render partial: 'shared/event_ads'

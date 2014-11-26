@@ -1,0 +1,82 @@
+.popup-holder
+{
+  position: relative;
+}
+
+.popup-holder > a
+{
+  position: relative;
+}
+
+.popup-holder > .popup > ul
+{
+  display: none;
+  padding: 4px 12px;
+  background: #fff;
+}
+
+.popup-holder.active > .popup
+{
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  z-index: 100;
+  width: 201px;
+  padding-top: 14px;
+}
+
+.popup-holder.active > .popup > .pointer
+{
+  overflow: hidden;
+  position: absolute;
+  top: 6px;
+  right: 19px;
+  width: 24px;
+  height: 0;
+  padding-top: 14px;
+  background: image-url('arrow1-upwards-white.png') 100% 0 no-repeat;
+}
+
+.popup-holder.active > .popup > ul
+{
+  display: block;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px 0px 5px rgba(0, 0, 0, 0.35), 0px -1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.popup-holder.active > .popup > ul > li
+{
+  float: none;
+  margin: 3px 0;
+  border-style: solid;
+  border-width: 1px 0 0;
+  border-color: $offwhite;
+}
+
+.popup-holder.active > .popup > ul > li:first-child
+{
+  border-top-width: 0;
+}
+
+.popup-holder.active > .popup > ul > li > a
+{
+  display: block;
+  padding: 9px;
+}
+
+.popup-holder.active > .popup > ul > li > a,
+.popup-holder:hover > ul > li > a:link,
+.popup-holder:hover > ul > li > a:visited
+{
+  color: #000;
+  text-decoration: none;
+}
+
+.popup-holder.active > .popup > ul > li > a:hover
+{
+  text-decoration: underline;
+}

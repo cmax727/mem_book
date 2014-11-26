@@ -1,0 +1,13 @@
+#main.colgroup.colgroup1
+  #passreset
+    = form_for(@user, as: :user, url: password_path(:user), html: { method: :post }) do |f|
+      %h2 Enter your email address:
+
+      %ul
+        %li<
+          = f.label :email, "Email address", class: :placeholder
+          = f.text_field :email, id: :email, class: :text, autocomplete: :off
+
+      %small You will be emailed with instructions to reset your password.
+
+      = f.submit "Reset", class: "button submit"

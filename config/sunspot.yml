@@ -1,0 +1,23 @@
+development:
+  solr:
+    hostname: localhost
+    port: 3001
+    log_level: INFO
+    min_memory: 128M
+    max_memory: 1G
+  auto_commit_after_request: true
+
+production:
+  solr:
+    hostname: localhost
+    port: 8983
+    log_level: DEBUG
+    min_memory: 512M
+    max_memory: 1G
+  auto_commit_after_request: true
+
+test:
+  solr:
+    hostname: localhost
+    port: 8981
+    log_level: OFF

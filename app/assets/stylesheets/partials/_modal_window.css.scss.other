@@ -1,0 +1,51 @@
+#modal_window
+{
+  width: 400px;
+  max-height: 500px;
+  position: fixed;
+  left: 50%;
+  top: 100px;
+  border-radius: 6px;
+  margin-left: -200px;
+  background-color: white;
+  z-index: 100;
+  border: 2px solid #cdcdcd;
+  box-shadow: 0px 0px 300px 300px rgba(100,100,100, .2);
+  display: none;
+}
+
+#modal_window #close
+{
+  font-weight: bold;
+  position: absolute;
+  left: 375px;
+  top: 7.5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#modal_window h1
+{
+  font-size: 16px;
+  margin-top: 15px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+
+#modal_window form{
+
+}
+
+#modal_window form span.checkbox{
+    float: right;
+    margin-right: 45px;
+}
+
+#modal_window form div{
+  clear: right;
+}
+
+#modal_window form input.primaryButton{
+  margin: 0px auto !important;
+}

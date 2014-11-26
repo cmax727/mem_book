@@ -1,0 +1,21 @@
+#main.inwards.colgroup.colgroup1
+  #form_wrap
+    %h1 We just need a little more information...
+
+    = form_for(current_user, url: strange_path, method: :put, html: { id: "splash_form" }) do |f|
+      = f.label :name
+      = f.text_field :name, size: nil
+
+      = f.fields_for :profile do |p|
+        = p.label :city, "Place"
+        = p.text_field :city, size: nil, class: "autocomplete", value: @city_name
+        = p.hidden_field :city_id
+
+        = p.check_box :agrees
+        I agree to the #{link_to("terms and conditions", terms_path)} and #{link_to("privacy policy", privacy_policy_path)} of #{Settings.app.name}
+
+      = f.submit "Submit"
+
+- content_for :javascripts do
+  = javascript_include_tag "pages/stranges/edit"
+

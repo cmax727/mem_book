@@ -1,0 +1,103 @@
+!!!
+
+%html
+  %head
+    %title= yield_for(:page_title, Settings.app.name)
+    %meta{charset: :"utf-8"}/
+
+    %meta{name: :keywords, content: :""}/
+    %meta{name: :description, content: :""}/
+    %meta{name: :viewport, content: :"width=960"}/
+
+    = stylesheet_link_tag :landing_styles,  media: :all
+    = stylesheet_link_tag :print,           media: :print
+
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"
+    = javascript_include_tag "jquery.helper"
+
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv"
+
+  %body
+    %header#bar_header
+      = link_to root_path do
+        %h1 Around<em>Yoga</em>
+      = render "shared/user_header"
+
+    #wrapper.gray_gradient
+      = render "shared/flash", locals: { flash: flash }
+      .inwards.world_map
+
+        %header
+          %hgroup
+            %h2 Community. Culture. Coexistence.
+            %h3 Join the community, meet interesting people Around you and Around the world
+
+        #main.colgroup.colgroup1
+          #content.col
+
+            = form_for(@user, url: register_path) do |f|
+              %h3 Sign up ! It's free
+
+              %ul
+                %li
+                  = f.label :name, "Full Name", class: "placeholder"
+                  = f.text_field :name, class: "text", id: " text", autocomplete: :off
+                %li
+                  = f.label :email, "Email", class: "placeholder"
+                  = f.text_field :email, class: "text", id: "email", autocomplete: :off
+                %li
+                  = f.label :password, "Password", class: "placeholder"
+                  = f.password_field :password, class: "text", id: "password", autocomplete: :off
+
+              %small By clicking &ldquo;Sign Up&rdquo; or using #{Settings.app.name}, you agree to our <a href="#{terms_path}">User Agreement</a> and <a href="#{privacy_policy_path}">Privacy Policy</a>
+
+              %input.button.submit{type: :submit, value: "Sign Up"}
+
+          %aside
+            %h3 Login with
+            %ul.login-links
+              %li.facebook
+                = link_to user_omniauth_authorize_path(:facebook) do
+                  = image_tag "facebook_button.png"
+              %li.google
+                = link_to user_omniauth_authorize_path(:google_oauth2) do
+                  = image_tag "google_button.png"
+
+
+      %aside.outwards
+        .inwards
+          %ul.clickable
+            %li.discover
+              %h2= link_to "Discover", discoveries_path
+              Find interesting people, places &amp; blogs
+            %li.groups
+              %h2= link_to "Groups", groups_path
+              Join the conversation and meet like minded people based on your interests.
+            %li.events
+              %h2= link_to "Events", all_events_path
+              Find free events. Around you and around the world.
+
+      %footer.outwards
+        .inwards
+          .colgroup
+
+            %blockquote.col
+              %h2 What do they say?
+              %p We had a go at using Around Yoga, the new social network for proin metus augue, lobortis non lacinia eu, pretium tortor donec...
+              %span.author - Jennifer Montgomery
+
+            .col
+              %h2 Press
+
+
+          %nav
+            %ul
+              %li= link_to "About Us", about_us_path
+              %li= link_to "Privacy Policy", privacy_policy_path
+              %li= link_to "Terms", terms_path
+              %li= link_to "Advertisers", advertisers_path
+              %li= link_to "Contact Us", contact_us_path
+              %li= link_to "Help", help_path
+
+          %small &copy; Copyright 2012 Around Yoga. All rights reserved.

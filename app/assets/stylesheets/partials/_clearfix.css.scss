@@ -1,0 +1,32 @@
+.clearfix,
+.box,
+.colgroup,
+.colset,
+.after,
+.inner,
+section
+{
+  display: block;
+  *display: inline-block;
+}
+
+.clearfix:after,
+.box:after,
+.colgroup:after,
+.colset:after,
+.after:after,
+.inner:after,
+section:after
+{
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  content: ".";
+}
+
+ .clear
+ {
+  visibility: hidden;
+  clear: both;
+}

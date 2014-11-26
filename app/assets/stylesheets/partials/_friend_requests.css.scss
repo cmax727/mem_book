@@ -1,0 +1,131 @@
+ul.friend_requests
+{
+  position: relative;
+}
+
+ul.friend_requests > li> div:first-child > img
+{
+  height: 54px;
+  width: 54px;
+  float: left;
+  margin-right: 10px;
+}
+
+ul.friend_requests > li
+{
+  border-top: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+  padding: 6px;
+  width: 500px;
+  margin: 0px auto;
+  margin-bottom: 15px;
+  clear: both;
+  height: 60px;
+  position: relative;
+}
+
+ul.friend_requests > li > strong
+{
+  font-size: 12px;
+}
+
+ul.friend_requests > li > div:first-child > strong:before
+{
+  content: " ";
+  background: image-url("map_icon.png");
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  background-size: cover;
+}
+
+ul.friend_requests > li > div:last-child > button
+{
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+ul.friend_requests > li > div:first-child
+{
+  width: 300px;
+  display: inline-block;
+}
+
+ul.friend_requests > li > div:first-child > h2
+{
+  width: 200px;
+}
+
+ul.friend_requests > li > div:last-child
+{
+  width: 150px;
+  margin-left: 25px;
+  display: inline-block;
+  position: relative;
+  top: -10px;
+}
+
+ul.friend_requests > li > div:last-child > button:first-child
+{
+  background-color: #15C827;
+  border-radius: 4px;
+  color: white;
+}
+
+ul.friend_requests > li > div:last-child > button:last-child
+{
+
+}
+
+
+ul.past_requests
+{
+  width: 600px;
+  margin: 0px auto;
+}
+
+ul.past_requests > li
+{
+  width: 275px;
+  display: inline-block;
+  float: left;
+  height: 85px;
+  padding-top: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+ul.past_requests > li > div:first-child > img
+{
+  height: 36px;
+  width: 36px;
+  float: left;
+  margin-right: 15px;
+}
+
+ul.past_requests > li > div:first-child > h2, strong
+{
+  line-height: 12px;
+}
+
+ul.past_requests > li > div:last-child > a
+{
+  width: auto;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #15C827;
+  color: white;
+  margin-top: 6px;
+  padding: 8px 8px;
+  border: 1px solid #cdcdcd;
+}
+
+ul.past_requests > li > div:last-child > a.declined
+{
+  background-color: $offwhite;
+}

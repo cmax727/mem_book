@@ -1,0 +1,75 @@
+form.search input.text
+{
+  margin-top: 10px;
+  padding: 10px 14px;
+  display: inline-block;
+  float: left;
+  margin-right: 0px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border: 1px solid #ccc;
+  -webkit-transition: all .3s;
+}
+
+form.search input.text:hover
+{
+  border-color: $primary;
+}
+
+form.search input.text:focus {
+  border-color: $primary;
+}
+
+form.search input.submit {
+  overflow: hidden;
+  width: 40px;
+  height: 39px;
+  border-color: #aaa;
+  background-image: image-url('magnifying_icon.png');
+  margin-top: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  left: -10px;
+  z-index: 2;
+  position: relative;
+  margin-left: 0px;
+  cursor: pointer;
+  font-size: 10px;
+  color: transparent;
+  background-size: 40%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background: #ddd image-url('magnifying_icon.png') 50% 50% no-repeat\9;
+  background-color: $offwhite;
+  float: left;
+  -webkit-transition: all .3s;
+}
+
+form.search input.submit:hover
+{
+  background-color: $primary;
+}
+
+form.search input.wide
+{
+  width: 50px;
+  background-size: 16px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+form.search input.text:focus + input[type="submit"]
+{
+  border: 1px solid $primary;
+  background-color: $primary;
+}
+
+form.sideSearch input.text{
+  border-radius: 2px;
+  width: 243px;
+}
+
+form.sideSearch input.submit{
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}

@@ -1,0 +1,144 @@
+﻿ul.options {
+
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+
+}
+
+ul.options > li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+    ul.options > li:first-child {
+        border-right: 1px solid #cdcdcd;
+        padding-right: 15px;
+    }
+
+    ul.options > li.on > a {
+        text-decoration: none;
+    }
+
+
+form.description-update > textarea {
+    width: 400px;
+    display: block;
+}
+
+form.settings-update > div {
+    margin-bottom: 25px;
+}
+
+    form.settings-update > div > label {
+        margin-right: 25px;
+    }
+form.settings-update select {
+    border-radius: 0px;
+}
+select.numbers-select {
+    width: 75px;
+    border-radius: 0px;
+}
+
+button.mod-options {
+    width: 100px;
+    margin-top: 10px;
+}
+
+div.options-wrap {
+    position: relative;
+    height: 160px;
+}
+div.options-wrap.profile{
+    display: inline-block;
+    float: right;
+    margin-right: 45px;
+    margin-top: -15px;
+}
+
+
+ul.options-list {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    left: 70px;
+    max-width: 150px;
+    width: 125px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 15px !important;
+    border: 1px solid #cdcdcd;
+    -o-box-shadow: 0px 1px 3px 1px rgba(200, 200, 200, .5);
+    -ms-box-shadow: 0px 1px 3px 1px rgba(200, 200, 200, .5);
+    -moz-box-shadow: 0px 1px 3px 1px rgba(200, 200, 200, .5);
+    box-shadow: 0px 1px 3px 1px rgba(200, 200, 200, .5);
+    z-index: 10;
+}
+ul.options-list.op2 {
+    left: -30px;
+}
+
+div.options-wrap.profile ul.options-list{
+    left: 25px;
+}
+
+
+    ul.options-list > li {
+        margin-bottom: 7px;
+        display: block;
+        margin-left: 0px;
+        text-align: center;
+        padding: 3px;
+        float: none;
+    }
+
+        ul.options-list > li > a {
+            text-decoration: none;
+            text-align: center;
+            float: none;
+        }
+
+
+form.flag-content {
+        padding: 30px;
+}
+
+#modal_window > p {
+    margin-left: 15px;
+}
+    form.flag-content > div {
+        margin-bottom: 20px;
+    }
+        form.flag-content > div  label {
+            width: 300px;
+            margin-right: 45px;
+        }
+
+
+.bookfix > li:first-child {
+
+    margin-left: 0px !important;
+
+}
+
+.bookfix ul li:first-child {
+    margin-left: 0px;
+}
+
+div.options-wrap ul.options-list.share li img{
+    width: 45px;
+    height: 45px;
+}
+
+div.options-wrap ul.options-list.share{
+    left: 15px;
+    margin-top: 3px;
+    width: 55px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}

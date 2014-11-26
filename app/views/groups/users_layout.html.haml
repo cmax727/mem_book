@@ -1,0 +1,27 @@
+- content_for(:navigation_item) { 'Groups' }
+#main.inwards.colgroup.colgroup2
+ .col
+  %section.colgroup.profile.profileB
+   
+   - case @render_type
+   - when 'members'
+    = render :partial => "inner_header", :locals => {:page_name => "users", :group => @group, :joined_state => @joined_state, users: @users}
+    = render partial: 'members', :locals => {:members => @members, :editable_state => @editable_state, :group => @group}
+   - when 'council'
+    = render :partial => "inner_header", :locals => {:page_name => "users", :group => @group, :joined_state => @joined_state, users: @users}
+    = render partial: 'council', :locals => {:owners => @owners, :editable_state => @editable_state, :group => @group, :leaders => @leaders, }
+   - when 'about'
+    = render :partial => "inner_header", :locals => {:page_name => "about", :group => @group, :joined_state => @joined_state, users: @users}
+    = render partial: 'about', :locals => {:group => @group}
+   - when 'settings'
+    = render :partial => "inner_header", :locals => {:page_name => "settings", :group => @group, :joined_state => @joined_state, users: @users}
+    = render partial: 'settings', :locals => {:group => @group, :setting => @setting}
+     
+
+  =link_to "Load More People", "#", id: "show_more"
+
+ %aside
+
+  = render partial: 'shared/event_ads'
+
+

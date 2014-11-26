@@ -1,0 +1,22 @@
+- content_for(:navigation_item) { 'Home' }
+- content_for(:page_title) {"A Day at the Beach | Seshank Vemuri"}
+#main.inwards.colgroup.colgroup1
+ .col
+  %hgroup
+   %h1
+    Upload Picture
+  .target
+   = image_tag "big_placeholder.jpg", {id: "imgTarget"}
+  = form_for [@user, @picture], :html => { :id => "uploadHolder", :multipart => true } do |f|
+   = f.file_field :avatar1
+   %p>
+   = f.label :caption
+   = f.text_area :caption
+   %p>
+   = f.label :permission
+   - array = ['friends only', 'everyone']
+   = f.select :permission, options_for_select(array, @picture.permission)
+   = f.submit "Upload", :class => "primaryButton block"
+
+ %aside
+  = render partial: 'shared/event_ads'

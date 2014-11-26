@@ -1,0 +1,25 @@
+app:
+  name: AroundYoga
+  host: aroundyoga-sheng-step2.herokuapp.com
+  local_host: localhost:3000
+facebook:
+  app_id: 341771752617651
+  app_secret: 8438cc141e4243230912f0f43d9f8291    
+twitter:
+  app_id: jQ2RkkdrrVgMo4DwyL6hrw
+  app_secret: 29xlZOH6fV6NcDtIWDOkftufWBBJfZiAhYoNg23kE
+google:
+  app_id: 354851137012-qq6o7hursckh6c598fd834mt2leg1oga.apps.googleusercontent.com
+  app_secret: v5srvx41fkKFrJcfBDr99etf
+smtp:
+  tls: true
+  from: user <user@gmail.com> 
+  address: smtp.gmail.com
+  port: 25
+  domain: gmail.com
+  authentication: plain
+  user_name: aroundyoga@gmail.com
+  password: dragon9(
+exceptions:
+  recipients: [user+exceptions@gmail.com]
+  sender: "user <user@gmail.com>"

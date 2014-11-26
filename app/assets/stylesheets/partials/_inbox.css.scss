@@ -1,0 +1,103 @@
+
+
+.inboxMessage{
+  width: 550px;
+  border: 1px solid #cdcdcd;
+  padding: 12px 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.inboxMessage:hover{
+  background-color: #cfcfcf;
+  cursor: pointer;
+}
+
+.inboxMessage img{
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+.inboxMessage h3{
+  font-weight: 300;
+  display: block;
+  padding-left: 75px;
+}
+
+.inboxMessage h4{
+  padding-left: 75px;
+  font-size: 12px;
+  display: block;
+}
+
+.inboxMessage .date{
+  position: absolute;
+  top: 10px;
+  left: 525px;
+  font-weight: bold;
+  color: #999;
+}
+
+#new_message{
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  padding: 4px 6px;
+  left: 55px;
+  top: 5px;
+  color: #cdcdcd;
+  font-size: 14px;
+}
+
+#new_message:hover{
+  border: 1px solid #555;
+  color: #222;
+}
+
+#new_message_form{
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+#new_message_form label{
+  margin-top: 5px;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+  width: 75px;
+}
+
+#new_message_form input:after{
+  clear: left;
+}
+
+
+#new_message_form label.breakLine{
+  float: none;
+}
+#new_message_form textarea{
+  width: 600px;
+  margin-left: 0px;
+  margin-top: 7.5px;
+  height: 200px;
+  overflow-y: scroll;
+  resize: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#new_message_form textarea:focus{
+  border: 1px solid green;
+  outline: none;
+}
+
+a.loadMore{
+  display: block;
+  text-decoration: none;
+  margin: 5px 55px 5px 0px;
+  float: right;
+  font-size: 14px;
+  border-bottom: 1px solid #acacac;
+}

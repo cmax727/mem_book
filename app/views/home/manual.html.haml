@@ -1,0 +1,53 @@
+#main.colgroup.colgroup1
+  #form_wrap
+    = form_for(@user, url: register_path) do |f|
+      %h3 Sign up ! It's free
+      = flash[:notice]
+
+      %ul
+        %li
+          %span.formerror= flash[:name_error]
+          = f.label :name
+          = f.text_field :name, class: "text", placeholder: "Full name"
+      %ul
+        %li
+          %span.formerror= flash[:email_error]
+          = f.label :email
+          = f.text_field :email, class: "text", id: "email", placeholder: "Email"
+      %ul
+        %li
+          %span.formerror= flash[:password_error]
+          = f.label :password
+          = f.password_field :password, class: "text", id: "password", placeholder: "Password"
+            
+      %ul
+        %li
+          %span.formerror= flash[:country_error]  
+          %label{:for => "country", :class => "country"} Country
+          = select_tag "country", options_from_collection_for_select(@countries, "country_pk", "name"), :id => "signup_country"
+    
+        %li
+          %span.formerror  
+          %label{:for => "region", :class => "region"} Region
+          = select_tag "region",  options_from_collection_for_select(@regions, "region_pk", "name"), :id => "signup_region"
+    
+        %li
+          %span.formerror  
+          %label{:for => "city", :class => "city"} City
+          = select_tag "city",    options_from_collection_for_select(@cities, "city_pk", "name"), :id => "signup_city"
+          
+      %small
+        By clicking “Sign Up” or using AroundYoga, you agree to our
+        %a{:href => "#"} User Agreement
+        and
+        %a{:href => "#"} Privacy Policy
+        
+      = succeed "I" do
+        = check_box_tag(:signup_agree)
+      agree to the
+      %a{:href => ""} terms and conditions
+      and
+      %a{:href => ""} privacy policy
+      of AroundYoga  
+      = f.submit "Sign up", class: "button submit big signup", :disabled => false
+      

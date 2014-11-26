@@ -1,0 +1,174 @@
+.box
+{
+  display: block;
+  margin-bottom: 29px;
+}
+
+.box .more
+{
+  float: right;
+  margin-top: .7em;
+}
+
+.box > .btn
+{
+  display: block;
+  width: 50%;
+  margin: 1.5em auto .5em;
+  min-height: 1px;
+}
+
+.box > ul
+{
+  clear: both;
+  min-height: 1px;
+}
+
+.box > section
+{
+  margin: 1em 0 .3em;
+}
+
+.box > section:first-child
+{
+  margin-top: 0;
+}
+
+.boxA
+{
+  margin-bottom: 29px;
+  padding: 29px 21px 12px;
+}
+
+.boxA > img:first-child
+{
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.boxB > h2:first-child
+{
+  position: relative;
+  margin: -5px 0 0;
+  padding-bottom: .65em;
+  font-weight: bold;
+}
+
+.boxB
+{
+  padding: 23px 21px 25px;
+}
+
+.boxB > h2,
+.boxB > h3,
+.boxB > h4,
+.boxB > h5,
+.boxB > h6
+{
+  color: $primary;
+  padding-bottom: 3px;
+  border-bottom: 1px solid $primary;
+}
+
+.boxB > ul
+{
+  float: left;
+  width: 100%;
+  margin-top: .5em;
+}
+
+.boxB > ul > li
+{
+  margin-top: 1.2em;
+}
+
+.boxB > ul > li:first-child
+{
+  margin-top: 0;
+}
+
+.boxB h2 + address
+{
+  margin: -0.7em 0 0;
+}
+
+section.boxB > h2:first-child
+{
+  margin-bottom: 0;
+  padding-bottom: 11px;
+  background: image-url('shadow1-bottom.png') 50% 100% no-repeat;
+  color: $primary;
+  font-weight: normal;
+  font-size: 17px;
+}
+
+section.boxB > h2 span
+{
+  display: block;
+}
+
+.boxC
+{
+  padding: 24px 28px 20px;
+  behavior: url('/components/PIE.htc');
+}
+
+.boxC > .colgroup
+{
+  margin: 15px 0 8px;
+}
+
+.box .highlight
+{
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.box .image_list > img
+{
+  height: 54px;
+  width: 54px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.place_list section
+{
+  margin-bottom: 15px;
+}
+
+.place_list section h1
+{
+
+}
+
+.place_list .see_more
+{
+  font-size: 14px;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.peopleList
+{
+
+}
+
+.peopleList strong
+{
+  padding-left: 20px;
+  // background: image-url('map_icon.png');
+  display: inline-block;
+  background-size: 11px 15px;
+  background-position: left center;
+}
+
+.peopleList img
+{
+}
+
+.peopleList > ul.smallList li
+{
+  height: 50px;
+}

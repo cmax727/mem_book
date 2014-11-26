@@ -1,0 +1,37 @@
+-# %aside
+ -# .thumb
+  -# = image_tag group.avatar.url, width: 40, height: 40, alt: "Avatar"
+.col
+
+ %h1= group.name  
+ -# -if (page_name === "single" || page_name === "discussion")
+ -if page_name === "discussion"
+  %button.headingButton.discussionHead#new_discussion
+   Start a Discussion
+ %ul.fence
+  %li.meter
+   = users.size
+   members
+  %li
+   - unless joined_state      
+    =link_to "Join the Group", group_join_group_path(group), :method => :post
+.book
+ %nav
+  %ul.tabs
+   %li{class: (page_name === "users") ? "on" : ""}
+    = link_to "Members", users_group_path(group)
+   %li{class: (page_name === "single" || page_name === "discussion") ? "on" : ""}
+    = link_to "Discussions", latest_discussions_group_path(group)
+   %li{class: (page_name === "about") ? "on" : ""}
+    = link_to "About/Ettiquette", about_group_path(group)
+   %li{class: (page_name === "settings") ? "on" : ""}
+    - if group.owners.include?(current_user) || group.leaders.include?(current_user)
+     = link_to "Manage", settings_group_path(group)
+  - if page_name == "users"
+   %ul.subCat
+    %li.on= link_to 'Members', users_group_path(group)
+    %li= link_to 'Group Council', council_group_path(group)    
+  - if page_name == "discussion"
+   %ul.subCat
+    %li.on= link_to 'Latest Discussions', latest_discussions_group_path(group)
+    %li= link_to 'Latest Activities', latest_activities_group_path(group)

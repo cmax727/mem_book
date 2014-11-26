@@ -1,0 +1,143 @@
+#wrapper > footer
+{
+  float: left;
+  width: 100%;
+  padding-bottom: 65px;
+}
+
+#wrapper > footer
+{
+  clear: both;
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 100%;
+  min-height: 38px;
+  background: image-url('shadow2-bottom.png') 50% 0 no-repeat;
+  color: $gray;
+  font-family: $bodyFont;
+}
+
+#wrapper > footer a, #wrapper > footer a:link, #wrapper > footer a:visited
+{
+  color: $gray;
+}
+
+#wrapper > footer > .inwards
+{
+  padding: 27px 0 0;
+  border-top: solid 1px #d3d3d3;
+}
+
+#wrapper > footer > .inwards > *
+{
+  float: left;
+}
+
+#wrapper > footer > .inwards > ul
+{
+  margin-right: 16px;
+}
+
+#wrapper > footer > .inwards > ul > li
+{
+  display: inline;
+  float: left;
+  margin-left: 3px;
+}
+
+#wrapper > footer > .inwards > ul > li:first-child
+{
+  margin-left: 0;
+}
+
+
+#wrapper > footer > .inwards > ul > li > a
+{
+  overflow: hidden;
+  float: left;
+  width: 32px;
+  height: 0;
+  padding-top: 31px;
+
+}
+
+#wrapper > footer > .inwards > ul > li > a,
+#wrapper > footer > .inwards > ul > li > a:link,
+#wrapper > footer > .inwards > ul > li > a:visited
+{
+  text-decoration: none;
+    background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+
+}
+
+#wrapper > footer > .inwards > ul > li > a.twitter
+{
+  background-image: image-url('icon4_twitter.png');
+}
+
+#wrapper > footer > .inwards > ul > li:hover > a.twitter
+{
+  background-image: image-url('icon3_twitter.png');
+}
+
+#wrapper > footer > .inwards > ul > li > a.facebook
+{
+  background-image: image-url('icon4_facebook.png');
+}
+#wrapper > footer > .inwards > ul > li:hover > a.facebook
+{
+  background-image: image-url('icon3_facebook.png');
+}
+
+#wrapper > footer > .inwards > nav
+{
+  float: left;
+  margin-top: 8px;
+}
+
+#wrapper > footer > .inwards > nav > ul
+{
+  font-size: 15px;
+}
+
+#wrapper > footer > .inwards > nav > ul > li
+{
+  display: inline;
+  float: left;
+  padding: 0 12px;
+  border-left: solid 1px #70706f;
+}
+
+#wrapper > footer > .inwards > nav > ul > li:first-child
+{
+  padding-left: 0;
+  border-left: none;
+}
+
+#wrapper > footer > .inwards > nav > ul > li:last-child
+{
+  padding-right: 0;
+}
+
+#wrapper > footer > .inwards > nav > ul > li > a,
+#wrapper > footer > .inwards > nav > ul > li > a:link,
+#wrapper > footer > .inwards > nav > ul > li > a:visited
+{
+  text-decoration: none;
+}
+
+#wrapper > footer > .inwards > nav > ul > li > a:hover
+{
+  text-decoration: underline;
+}
+
+#wrapper > footer > .inwards > small
+{
+  display: inline;
+  float: right;
+  margin-top: 9px;
+  font-size: 12px;
+}

@@ -1,0 +1,100 @@
+#create_event_form
+{
+  width: 500px;
+  margin: 0px auto 0px auto;
+}
+
+#create_event_form > label,
+#create_event_form > aside.interest > label
+{
+  width: 200px;
+  float: left;
+}
+
+#create_event_form > textarea,
+#create_event_form > select,
+#create_event_form > input
+{
+  display: block;
+  clear: right;
+  margin: 7.5px;
+  width: 200px;
+  border: 1px solid #999;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+
+#create_event_form > aside.interest
+{
+  margin-top: 25px;
+}
+
+#create_event_form > aside.interest > #interest_target
+{
+  width: 400px;
+  border: 2px solid;
+  border-color: $lightgray;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+  #create_event_form > aside.interest > #interest_target .an_interest
+  {
+    background-color: #c0daad;
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-size: 1.1em;
+    box-shadow: 1px 1px 2px #555;
+    margin-left: 5px;
+  }
+
+    #create_event_form > aside.interest > #interest_target .an_interest .remove_interest
+    {
+      font-style: normal;
+      margin-left: 5px;
+      height: 18px;
+      width: 18px;
+      padding-right: 2px;
+      font-size: .9em;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8.5px;
+      text-align: center;
+      display: inline-block;
+    }
+
+#create_event_form > aside > #group_photo
+{
+  display: block;
+  margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 5px solid #eee;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+
+#create_event_form > aside > span
+{
+  text-decoration: underline;
+  display: block;
+  cursor: pointer;
+}
+
+#create_event_form > aside.photo
+{
+  width: 150px;
+  float: left;
+}
+
+#create_event_form > input[type=submit]
+{
+  margin: 0px auto;
+  margin-top: 45px;
+
+}

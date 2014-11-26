@@ -1,0 +1,30 @@
+ul.share-mini {
+    list-style-type: none;
+    padding: 0px;
+}
+
+ul.share-mini li {
+    font-family:"Helvetica", sans-serif;
+    font-size: 11px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+
+
+
+    a{
+       text-decoration: none;
+    }
+
+}
+
+#facebook-sm {
+        background-image: image-url('fb-icon.png');
+    }
+    #twitter-sm {
+        background-image:image-url('twitter-bird-white-on-blue.png')
+    }
+    #gplus-sm {
+        background-image: image-url('gplus-icon.png')
+    }

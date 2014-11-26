@@ -1,0 +1,95 @@
+article p, article blockquote, article ul, article ol
+{
+  margin-bottom: 1em;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6
+{
+  color: #000;
+}
+
+article h2, article h3, article h4, article h5, article h6
+{
+  margin-top: 1em;
+}
+
+article h5, article h6
+{
+  font-size: 1em;
+}
+
+article > *:first-child, article > aside + *
+{
+  margin-top: 0;
+}
+
+article ul
+{
+  margin-bottom: 1em;
+}
+
+article ol
+{
+  list-style: decimal;
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+article ul li
+{
+  margin: .25em 0;
+  padding-left: 44px;
+  background: image-url('bullet2-lawngreen.png') 23px 5px no-repeat;
+}
+
+
+span.mention{
+  font-weight: bold;
+  color: $primary;
+  cursor: pointer;
+}
+
+span.mention:hover{
+  text-decoration: underline;
+}
+
+.interest_control{
+  float: right;
+  #interest_cancel{
+    display: none;
+  }
+  #interest_save{
+    display: none;
+  }
+}
+
+ul#myTags{
+  float: left;
+  width: 100%;
+  display: none;
+}
+
+article.aboutMe h5{
+  float: left;
+  width: 30%;
+}
+
+article.aboutMe a{
+  float: left;
+}
+
+article.aboutMe p{
+  width: 100%;
+  clear: both;
+  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  white-space: pre-wrap;       /* css-3 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  word-break: break-all;
+  white-space: normal;
+}
+
+article.latestNews{
+  margin-top: 50px;
+}

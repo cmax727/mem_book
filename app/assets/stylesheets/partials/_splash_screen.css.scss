@@ -1,0 +1,64 @@
+/*Edit Profile Form*/
+#splash_form
+{
+  width: 500px;
+  margin: 0px auto 0px auto;
+}
+
+#form_wrap
+{
+  width: 500px;
+  margin: 0px auto;
+}
+
+#form_wrap > h1
+{
+  margin-bottom: 25px;
+  font-family: headingFont;
+  font-size: 20px;
+}
+
+#splash_form > label
+{
+  width: 200px;
+  float: left;
+}
+
+#splash_form > textarea,
+#splash_form select,
+#splash_form input
+{
+  display: block;
+  clear: right;
+  margin: 7.5px;
+  width: 200px;
+  border: 1px solid #999;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+#splash_form > select
+{
+  margin: 7.5px;
+}
+
+#splash_form > #captcha_holder
+{
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+#splash_form > .form_aside
+{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+select#signup_region, label.region.social{
+  display: none;
+}
+
+
+select#signup_city, label.city.social{
+  display: none;
+}

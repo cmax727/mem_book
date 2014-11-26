@@ -1,0 +1,16 @@
+.box.boxB
+ %h2
+  Group Council
+ %ul.listF
+  - owners.each do |owner| 
+   %li
+    = image_tag owner.avatar.url(:group_thumb)
+    %h5
+     = link_to owner.name, user_profile_path(owner)
+    %span
+     (Owner)
+  - leaders.each do |leader|    
+   %li
+    = image_tag leader.avatar.url(:group_thumb)
+    %h5
+     = link_to leader.name, user_profile_path(leader)

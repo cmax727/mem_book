@@ -1,0 +1,41 @@
+- content_for(:navigation_item) { 'Home' }
+#main.inwards.colgroup.colgroup2
+  %hgroup
+    %h1
+      Friend Requests
+  .col
+    .box.boxC
+      %h3
+        Pending Requests
+      %ul.friend_requests
+        - @requested_and_unignored_friendships.each do |friendship|
+          %li
+            %div
+              = image_tag friendship.user.avatar.url
+              %h2= link_to friendship.user.name, user_profile_path(friendship.user)
+              %strong
+                = friendship.user.profile.place
+            %div
+              = button_tag(:type => 'button') do
+                - link_to "Accept", user_friend_request_accept_path(@user, friendship.user), :method => :post 
+              = button_tag(:type => 'button') do
+                - link_to "Not Now", user_friend_request_ignore_path(@user, friendship.user), :method => :post
+    .boxBoxC
+      %h3
+        Past Requests
+      %ul.past_requests
+        - @ignored_friendships.each do |friendship|
+          %li
+            %div
+              = image_tag friendship.user.avatar.url
+              %h2= link_to friendship.user.name, user_profile_path(friendship.user)
+              %strong
+                = friendship.user.profile.place
+            -# %div= link_to "Declined", user_friend_request_decline_path(@user, friendship.user), :method => :post, class: "declined"
+            %div
+              = link_to "Declined", user_friend_request_decline_path(@user, friendship.user), :method => :post
+              = link_to "Accept", user_friend_request_accept_path(@user, friendship.user), :method => :post 
+        
+  %aside
+    = render partial: "shared/ads"
+

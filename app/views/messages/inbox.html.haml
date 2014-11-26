@@ -1,0 +1,48 @@
+- content_for(:page_title) { 'Inbox' }
+- content_for(:navigation_item) { 'Home' }
+
+#main.inwards.colgroup.colgroup2
+  %hgroup
+    %h1 Inbox
+    -# %a#new_message{href: '#'} New Message +
+
+    %form.mini.search.inline-search
+      <input type="text" name="" class="text" id="content-search-query" value="" data-default-value="eg: &ldquo;Yoga on 17th May&rdquo;" />
+      <input type="submit" value="Search" class="button submit" />
+
+  .col
+    - @messaged_users.each do |user|
+     
+      %div{:class => "inboxMessage"}
+        = link_to image_tag(user.avatar.url, alt: :avatar), user_pictures_path(user) 
+        %h3
+          - if (user.messages_with @user).last.user == @user
+            To:
+          - elsif (user.messages_with @user).last.recipient == @user
+            From:
+          = link_to user.name, user_profile_path(user)
+        %h4
+          = link_to user_related_messages_path(user) do
+            = (user.messages_with @user).last.body.truncate(150)
+        %span.date= (user.messages_with @user).last.created_at.to_date.to_formatted_s(:long).split(',')[0]  
+        
+         
+  %aside
+    = render partial: 'shared/event_ads'
+
+#modal_window
+  %span#close x
+  %h1 New Message
+  -# %form#new_message_form{ :action => user_messages_url(@user, :only_path => false), :method => :post }
+  = form_for [@user, @message], :html => { :id => "new_message_form" } do |msg|   
+    = hidden_field_tag 'message_type', 'new_message'   
+    %label{:for => "to"} To:
+    = msg.text_field :recipient
+
+    -# %input{:name => "subject", :type => "text"}/
+    
+    %label.breakLine{:for => "message"} Message:
+    = msg.text_area :body
+    -# %textarea{:name => "message"}
+    = msg.submit "Send"
+    -# %input{:type => "submit", :value => "Send", :class => "send_message"}/

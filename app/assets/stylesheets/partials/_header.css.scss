@@ -1,0 +1,527 @@
+#home > img {
+  height: 20px;
+  width: 25px;
+  margin-right: 10px;
+  top: -2.5px;
+  position: relative;
+}
+
+
+header > .inwards > h1 > a {
+  font-family: $sansFont;
+  font-size: 25px;
+  margin-top: 0px;}
+
+
+#wrapper > header {
+  height: 40px;
+  background: #dfdfdf;
+  color: #fff;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); }
+
+#wrapper > header a, #wrapper > header a:link, #wrapper > header a:visited {
+ }
+
+#wrapper > header > .inwards > h1 {
+  display: inline;
+  float: left;
+  margin: 0px 100px 0 0; }
+
+#wrapper > header > .inwards > h1 > a {
+  float: left;
+  width: auto;
+  height: 40px;
+  padding-top: 12px;
+  font-size: 16px;
+  color: #222; }
+
+    #wrapper > header > .inwards > h1 > a > img {
+        margin-top: -4px;
+    }
+
+#wrapper > header > .inwards > h1 > a:hover {
+  color: $primary;
+  text-decoration: none; }
+
+#wrapper > header > .inwards > aside {
+  float: right; }
+
+#wrapper > header > .inwards > aside > .meter {
+  float: left;
+  margin: 10px 20px 0 0; }
+
+#wrapper > header > .inwards > aside > .meter > a {
+  position: relative;
+  display: inline;
+  float: left;
+  width: 28px;
+  height: 0;
+  padding-top: 27px;
+  margin-right: 15px;
+  background: image-url(notification_icon) no-repeat;
+  background-size: cover; }
+
+#wrapper > header > .inwards > aside > .meter > a * {
+  position: relative;
+  float: left;
+  height: 17px; }
+
+#wrapper > header > .inwards > aside > .meter > a > em {
+  position: absolute;
+  top: -4px;
+  left: -8px;
+  padding-left: 1px;
+  color: #222;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center; }
+
+#wrapper > header > .inwards > aside > .meter > a > em > span {
+  margin-right: -8px;
+  padding: 0 9px 0 0;
+  background-color: $red;
+  background-color: rgba(245, 51, 51, 0.8);
+  border-radius: 8px;
+  vertical-align: middle;
+  padding-top: 1px \0/IE9; }
+
+#wrapper > header > .inwards > aside > .meter > a > em > span > span {
+  right: -4px;
+  vertical-align: middle; }
+
+#wrapper > header > .inwards > aside > form {
+  display: inline;
+  float: left;
+  margin-top: 7.5px; }
+
+#wrapper > header > .inwards > aside > form > * {
+  float: left; }
+
+#wrapper > header > .inwards > aside > form label {
+  left: 12px; }
+
+#wrapper > header > .inwards > aside > form input.text {
+  width: 200px;
+  padding: 5px 11px;
+  border-color: #fff;
+  border-radius: 2px;
+  background-color: #fff;
+  behavior: none; }
+
+#wrapper > header > .inwards > aside > form input.text:focus {
+  background-color: #fff; }
+
+#header-submit {
+  display: inline-block;
+  height: 27px;
+  width: 27px;
+  background-size: 40%;
+  background-position: center center;
+  border-color: #aaa;
+  background-image: image-url('magnifying_icon.png');
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: none;
+  z-index: 2;
+  position: relative;
+  margin-left: 0px;
+  margin-top: 0px;
+  cursor: pointer;
+  font-size: 10px;
+  color: transparent;
+  background-size: 40%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background: #ddd image-url('magnifying_icon.png') 50% 50% no-repeat\9;
+  background-color: $offwhite;
+}
+
+#wrapper > header > .inwards > aside > form .popup-holder {
+  display: inline;
+  float: left;
+  width: 41px;
+  margin: 2px 0 0 17px; }
+
+#wrapper > header > .inwards > aside > form .popup-holder > a {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 41px;
+  height: 0;
+  padding-top: 24px;
+  border-width: 0;
+  background: image-url("icon2_person.png") no-repeat;
+}
+
+#wrapper > header > .inwards > aside > form .popup-holder > a > span {
+  overflow: hidden;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  float: left;
+  width: 11px;
+  height: 0;
+  padding: 6px 0 0;
+
+}
+
+#wrapper > header > .inwards > aside > form .popup-holder.active ul > li > a, #wrapper > header > .inwards > aside > form .popup-holder:hover ul > li > a:link, #wrapper > header > .inwards > aside > form .popup-holder:hover ul > li > a:visited {
+  color: #000; }
+
+/* Main Navigation */
+#wrapper > header {
+  position: fixed;
+  z-index: 3; }
+
+#wrapper > header > .inwards > nav {
+  float: left;
+  margin-top: 0px;}
+
+#wrapper > header > .inwards > nav > ul {
+  font-size: 14px; }
+
+#wrapper > header > .inwards > nav > ul > li {
+  position: relative;
+  display: inline;
+  float: left;
+  margin-left: 15px;
+  font-family: $sansFont;
+  height: 29px;
+  padding-top: 11px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+#wrapper > header > .inwards > nav > ul > li.on{
+  background-color: #cdcdcd;
+  color: black;
+}
+
+#wrapper > header > .inwards > nav > ul > li > a {
+  float: left; }
+  #wrapper > header > .inwards > nav > ul > li > a:hover {
+    color: $darkgray; }
+
+#wrapper > header > .inwards > nav > ul > li:first-child {
+  margin-left: 0;
+  background-image: image-url("around_yoga_icon90.png");
+  background-size: 20px 20px;
+padding-left: 35px;
+background-repeat: no-repeat;
+font-weight: bold;
+background-position: 8px 9px;
+  }
+
+#wrapper > header > .inwards > nav > ul a, #wrapper > header > .inwards > nav > ul a:link, #wrapper > header > .inwards > nav > ul a:visited {
+  color: $darkgray;
+  text-decoration: none; }
+
+#wrapper > header > .inwards > nav > ul a:hover {
+  color: #fff; }
+
+#wrapper > header > .inwards > nav > ul li.on > a {
+  color: $darkgray }
+
+#wrapper > header .dir {
+  position: relative;
+  behavior: url(php_includes/PIE.htc); }
+
+#wrapper > header .dir a, #wrapper > header .dir a:link, #wrapper > header .dir a:visited {
+  text-decoration: none; }
+
+#wrapper > header .dir ul {
+  display: none; }
+
+#wrapper > header .dir > a > span {
+  float: left;
+  padding-right: 20px;
+  background: image-url(arrow1-downwards-lightgray) 100% 50% no-repeat;
+  cursor: pointer; }
+
+#wrapper > header .dir:hover {
+  box-shadow: inset 1px 1px 2px #000;
+  margin: -7px -12px -4px 28px;
+  padding: 7px 12px 4px;
+  background-color: #e2e2e2;
+  color: #1f1f1f;
+  -moz-border-radius-topleft: 6px;
+  -webkit-border-top-left-radius: 6px;
+  border-top-left-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+  z-index: 999;
+  behavior: url(php_includes/PIE.htc); }
+
+#wrapper > header .dir:hover > a {
+  position: relative;
+  z-index: 10;
+  margin: -8px -12px -5px;
+  padding: 8px 12px 4px; }
+
+#wrapper > header .dir:hover > a, #wrapper > header .dir:hover > a:link, #wrapper > header .dir:hover > a:visited {
+  color: #1f1f1f; }
+
+#wrapper > header .dir:hover > a > span {
+  background-image: image-u(1-downwards-black); }
+
+#wrapper > header .dir:hover > ul {
+  display: block;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+#wrapper > header .dir:hover > ul {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  z-index: 9;
+  width: 178px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px 0px 5px rgba(0, 0, 0, 0.35);
+  background-color: $offwhite;
+  font-size: 13px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-right-radius: 6px;
+  border-top-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  behavior: url(php_includes/PIE.htc);
+  left: 1px; }
+
+#wrapper > header .dir:hover > ul a {
+  position: relative;
+  display: block;
+  padding: 4px 0; }
+
+#wrapper > header .dir:hover > ul a, #wrapper > header .dir:hover > ul a:link, #wrapper > header .dir:hover > ul a:visited {
+  color: #1f1f1f; }
+
+#wrapper > header .dir:hover > ul a:hover {
+  margin: 0 -8px;
+  padding: 4px 8px;
+  background-color: #aaa;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  behavior: url(php_includes/PIE.htc); }
+
+#wrapper > header .dir.meter {
+  background-image: im(notification_icon);
+  background-position: -9999px -9999px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#wrapper > header .dir.meter:hover {
+  /*margin: 7.5px 8px -8px; padding: 7px 12px 0px;*/
+  background-color: $red; }
+
+#wrapper > header .dir.meter:hover > a {
+  margin: -8px 0px -5px 0px;
+  padding: 35px 12px 0px 0px;
+  margin-left: 0px; }
+
+#wrapper > header .dir.meter:hover > a > em > span {
+  /*top: 6px; left: 7px;*/
+  background: #000; }
+
+#wrapper > header > .inwards > aside > .mail > a {
+  background: image-url(mail_icon);
+  background-size: cover; }
+
+.subdir > li > a {
+  font: .9em $bodyFont;
+  letter-spacing: 0px; }
+
+
+
+
+
+/*New Notification Area ^ is placeholder*/
+#updates{
+  padding: 0px;
+  margin: 0px;
+  width: 125px;
+  position: relative;
+  height: 40px;
+  display: inline;
+  margin-left: 100px;
+}
+
+#updates > div{
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+#updates > a{
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+
+#updates > div:hover > ul {
+  display: block;
+}
+
+a.mail{
+  background: image-url("mail_icon.png");
+  background-position: 7.5px 5px;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+div.notifications > span.meter{
+  margin-left: 9px;
+  display: inline-block;
+  position: absolute;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 6px 10px;
+  color: $darkgray;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 1px #aaa, inset -1px -1px 1px #ddd;
+  width: 10px;
+  height: 16px;
+}
+
+
+a.mail > span.meter{
+  position: absolute;
+  display: inline-block;
+  margin-top: 4px;
+  margin-left: 4px;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 10px;
+  background-color: $red;
+
+}
+
+div.settings{
+  background: image-url("person_icon_darkgray90.png");
+  background-size: 25px 25px;
+  background-position: 10px 8px;
+  background-repeat: no-repeat;
+}
+
+
+
+#updates > div > ul{
+  width: 255px;
+  background-color: white;
+  display: none;
+  position: absolute;
+  padding: 0px;
+  border-top: 4px solid #cdcdcd;
+  top: 41px;
+  left: -165px;
+  text-decoration: none;
+  font-color: black;
+  font-weight: bold;
+  box-shadow: 0px 0px 1px 1px #cdcdcd;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+#updates > div > ul > h4{
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 7px;
+}
+
+#updates > div > ul > h2{
+  color: #222;
+  display: block;
+  font-size: 14px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  font-weight: bold;
+  font-family: $sansFont;
+}
+
+#updates > div.on > ul{
+ display: block;
+}
+
+#updates > div > ul > li{
+  color: black;
+  font-weight: bold;
+  padding: 4px 10px;
+  padding-bottom: 8px;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0, .1);
+}
+
+#updates > div > ul > li.new{
+  background-color: #e0e0e0;
+}
+
+
+#updates > div > ul > li > a{
+  text-decoration: none;
+}
+
+#updates > div > ul > li > a:hover{
+  color: black;
+}
+
+#updates > div > ul > li:last-child{
+  border: none;
+}
+
+#updates > div > ul > li > a > span{
+  color: $primary;
+  font-weight: bold;
+}
+
+#updates > div > ul > li:hover{
+  background-color: #cdcdcd;
+};
+
+#updates > div.settings > ul {
+  width: 150px;
+  left: -55px;
+
+}
+
+#updates > div:hover{
+  background-color: #cdcdcd;
+}
+
+.header-buttons-wrap{
+  position: absolute;
+  left: 500px;
+  top: 75px;
+}
+
+.header-buttons-wrap button{
+  margin-left: 0px !important;
+
+}
+.header-buttons-wrap button:first-child{
+  width: 115px;
+
+}
+
+.header-buttons-wrap.event{
+    top: 125px;
+}

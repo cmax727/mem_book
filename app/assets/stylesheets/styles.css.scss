@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ 
+
+*/
+@import "jquery.ui.styles.min";
+@import "partials/var";
+@import "partials/reset";
+@import "partials/fonts";
+@import "partials/buttons";
+@import "partials/defaults";
+@import "partials/header";
+@import "partials/discussions";
+@import "partials/update_status";
+@import "partials/small_search_form";
+@import "partials/share_form";
+@import "partials/article_styles";
+@import "partials/section_styles";
+@import "partials/menus";
+@import "partials/clearfix";
+@import "partials/layout_models";
+@import "partials/calendar";
+@import "partials/box_models";
+@import "partials/tags";
+@import "partials/fence";
+@import "partials/lists";
+@import "partials/groups";
+@import "partials/pop_up";
+@import "partials/switch";
+@import "partials/column_models";
+@import "partials/profile_styles";
+@import "partials/book_sections";
+@import "partials/main_content_holder";
+@import "partials/footer";
+@import "partials/places";
+@import "partials/splash_screen";
+@import "partials/flash_messages";
+@import "jquery.ui.styles.min.css.scss";
+@import "partials/widgets";
+@import "partials/namecards";
+@import "partials/inbox";
+@import "partials/modal_window";
+@import "partials/message";
+@import "partials/picture_page";
+@import "partials/friend_requests";
+@import "partials/default_form_styles";
+@import "partials/manage";
+@import "partials/share";
+@import "partials/login_links";
+@import "partials/errors";
+@import "partials/start_discussion";
+
+@import "friendship";
+
+
+.noBorder {
+  border: none !important;
+  border-color: none !important;
+  border-width: none !important;
+}
+
+.noScroll{
+  overflow-y: hidden;
+  border-radius: 6px;
+}
+
+@-webkit-keyframes blink{ 0% {opacity: 1;} 50% {opacity: .8;} 100% {opacity: 1;}}

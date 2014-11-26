@@ -1,0 +1,16 @@
+%section
+  %ul.listC
+    - events.each do |event|
+      %li
+        .inner
+          %time<
+            %span= event.started_at.strftime("%A")
+            %span.cal
+              %span= event.started_at.strftime("%b")
+              %span= event.started_at.day
+
+          %h2= link_to event.name, event_path(event)
+          %time= event.started_at.strftime("%A %d %B, %I%P") + " - " + event.ended_at.strftime("%A %d %B,%I%P")   
+          
+          %address
+            %span= event.address

@@ -1,0 +1,16 @@
+#main.inwards.colgroup.colgroup2
+ %hgroup
+  %h1
+   People
+  %h2= '(' + @friends.size.to_s + ')'
+ %div.col
+  %section.box.boxC.peopleList.noBorder
+   %ul.listE.smallList
+    - @friends.each do |friend|
+     %li
+      = image_tag friend.avatar.url
+      %h2
+       = link_to friend.name, user_profile_path(friend)
+      %strong= friend.profile.place
+ %aside
+  = render partial: 'shared/event_ads'
